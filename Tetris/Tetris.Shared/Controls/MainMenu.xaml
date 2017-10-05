@@ -1,0 +1,129 @@
+﻿<UserControl
+    x:Class="Tetris.Controls.MainMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tetris.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:svg="using:Tetris.Controls.SVG"
+    mc:Ignorable="d"
+    d:DesignHeight="800"
+    d:DesignWidth="480">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25*" />
+                <RowDefinition Height="{Binding ContinueGameHeight, Mode=OneWay, FallbackValue='5*'}" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="13*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1"/>
+                    <svg:MainLogo Grid.Column="1"/>
+                </Grid>
+                <TextBlock x:Uid="ApplicationName" Grid.Row="2" Style="{StaticResource MenuLogo}" Text="BLOCKS+" Margin="0,10,0,0"/>
+            </Grid>
+            <Grid Grid.Row="1" Background="Transparent" Visibility="{Binding IsContinueAvailable, Converter={StaticResource BooleanToVisibility}, FallbackValue=Hidden, Mode=OneWay}">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="PointerPressed">
+                        <core:InvokeCommandAction Command="{Binding PauseResumeCommand, Mode=OneTime}" />
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerEntered">
+                        <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}" />
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerExited">
+                        <core:ChangePropertyAction PropertyName="Background" />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+                <Border Style="{StaticResource ButtonBorder}" />
+                <TextBlock x:Uid="Continue" Style="{StaticResource MenuLable}" Text="CONTINUE" />
+            </Grid>
+            <Grid Grid.Row="3" Background="Transparent">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="PointerPressed">
+                        <core:InvokeCommandAction Command="{Binding ChooseModeCommand, Mode=OneTime}" />
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerEntered">
+                        <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}" />
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerExited">
+                        <core:ChangePropertyAction PropertyName="Background" />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+                <Border Style="{StaticResource ButtonBorder}" />
+                <TextBlock x:Uid="NewGame" Style="{StaticResource MenuLable}" Text="NEW GAME" />
+            </Grid>
+            <Grid Grid.Row="5" Background="Transparent">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="PointerPressed">
+                        <core:InvokeCommandAction Command="{Binding ShowRecordsCommand, Mode=OneTime}" />
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerEntered">
+                        <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}" />
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerExited">
+                        <core:ChangePropertyAction PropertyName="Background" />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+                <Border Style="{StaticResource ButtonBorder}" />
+                <TextBlock x:Uid="Records" Style="{StaticResource MenuLable}" Text="RECORDS" />
+            </Grid>
+            <Grid Grid.Row="7" Background="Transparent">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="PointerPressed">
+                        <core:InvokeCommandAction Command="{Binding SwitchSettingsCommand, Mode=OneTime}" />
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerEntered">
+                        <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}" />
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerExited">
+                        <core:ChangePropertyAction PropertyName="Background" />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+                <Border Style="{StaticResource ButtonBorder}" />
+                <TextBlock x:Uid="Settings" Style="{StaticResource MenuLable}" Text="SETTINGS" />
+            </Grid>
+            <Grid Grid.Row="9" Background="Transparent">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="PointerPressed">
+                        <core:InvokeCommandAction Command="{Binding SwitchAboutCommand, Mode=OneTime}" />
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerEntered">
+                        <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}" />
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerExited">
+                        <core:ChangePropertyAction PropertyName="Background" />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+                <Border Style="{StaticResource ButtonBorder}" />
+                <TextBlock x:Uid="About" Style="{StaticResource MenuLable}" Text="ABOUT" />
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

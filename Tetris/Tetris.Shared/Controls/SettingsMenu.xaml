@@ -1,0 +1,413 @@
+﻿<UserControl
+    x:Class="Tetris.Controls.SettingsMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tetris.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:svg="using:Tetris.Controls.SVG"
+    mc:Ignorable="d"
+    d:DesignHeight="800"
+    d:DesignWidth="480">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel Margin="15,0,15,0">
+                <TextBlock x:Uid="ControlType" Text="Control type" Style="{StaticResource SettingsTitle}" Foreground="{StaticResource ForegroundColor}"/>
+                <Grid Height="140">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" Background="Transparent">
+                        <svg:ButtonsControlType Margin="60,0,10,15"/>
+                        <Grid Height="4" Background="{ThemeResource SystemColorControlAccentBrush}" Margin="70,0,20,0" VerticalAlignment="Bottom" Visibility="{Binding ControlType, Converter={StaticResource ControlTypeToVisibility},FallbackValue=Hidden, ConverterParameter=Buttons, Mode=OneWay}"/>
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                <core:InvokeCommandAction Command="{Binding SwitchControlTypeToButtonsCommand, Mode=OneTime}" />
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                    </Grid>
+                    <Grid Grid.Column="1" Background="Transparent">
+                        <svg:SwipeControlType Margin="10,0,60,15"/>
+                        <Grid Height="4" Background="{ThemeResource SystemColorControlAccentBrush}" Margin="20,0,70,0" VerticalAlignment="Bottom" Visibility="{Binding ControlType, Converter={StaticResource ControlTypeToVisibility},FallbackValue=Hidden, ConverterParameter=Swipe, Mode=OneWay}"/>
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                <core:InvokeCommandAction Command="{Binding SwitchControlTypeToSwipeCommand, Mode=OneTime}" />
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                    </Grid>
+                </Grid>
+                <TextBlock x:Uid="ControlPosition" Text="Controls position" Style="{StaticResource SettingsTitle}" Foreground="{StaticResource ForegroundColor}" Visibility="{Binding ControlType, Converter={StaticResource ControlTypeToVisibility},FallbackValue=Hidden, ConverterParameter=Buttons, Mode=OneWay}"/>
+                <Grid Visibility="{Binding ControlType, Converter={StaticResource ControlTypeToVisibility},FallbackValue=Hidden, ConverterParameter=Buttons, Mode=OneWay}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Margin="10,0,10,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Background="Transparent">
+                            <svg:OnCircle Margin="5" Visibility="{Binding ControlPosition, Converter={StaticResource ControlPositionToVisibility},FallbackValue=Hidden, ConverterParameter='Bottom,true', Mode=OneWay}"/>
+                            <svg:OffCircle Margin="5" Visibility="{Binding ControlPosition, Converter={StaticResource ControlPositionToVisibility},FallbackValue=Hidden, ConverterParameter='Bottom,false', Mode=OneWay}"/>
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchControlsPositionCommand, Mode=OneTime}" CommandParameter="Bottom" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </Grid>
+                        <Grid Grid.Column="1" Style="{StaticResource SettingsChooseLine}" Background="{StaticResource AccentDarkColor}"/>
+                        <Grid Grid.Column="2" Background="Transparent">
+                            <svg:OnCircle Margin="5" Visibility="{Binding ControlPosition, Converter={StaticResource ControlPositionToVisibility},FallbackValue=Hidden, ConverterParameter='Middle,true', Mode=OneWay}"/>
+                            <svg:OffCircle Margin="5" Visibility="{Binding ControlPosition, Converter={StaticResource ControlPositionToVisibility},FallbackValue=Hidden, ConverterParameter='Middle,false', Mode=OneWay}"/>
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchControlsPositionCommand, Mode=OneTime}" CommandParameter="Middle" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </Grid>
+                        <Grid Grid.Column="3" Style="{StaticResource SettingsChooseLine}" Background="{StaticResource AccentDarkColor}"/>
+                        <Grid Grid.Column="4" Background="Transparent">
+                            <svg:OnCircle Margin="5" Visibility="{Binding ControlPosition, Converter={StaticResource ControlPositionToVisibility},FallbackValue=Hidden, ConverterParameter='High,true', Mode=OneWay}"/>
+                            <svg:OffCircle Margin="5" Visibility="{Binding ControlPosition, Converter={StaticResource ControlPositionToVisibility},FallbackValue=Hidden, ConverterParameter='High,false', Mode=OneWay}"/>
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchControlsPositionCommand, Mode=OneTime}" CommandParameter="High" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Uid="Bottom" Text="bottom" Grid.Column="0" HorizontalAlignment="Left" Style="{StaticResource SettingsChooseLable}" Foreground="{StaticResource ForegroundColor}">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchControlsPositionCommand, Mode=OneTime}" CommandParameter="Bottom" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </TextBlock>
+                        <TextBlock x:Uid="Middle" Text="middle" Grid.Column="1" HorizontalAlignment="Center" Style="{StaticResource SettingsChooseLable}" Foreground="{StaticResource ForegroundColor}">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchControlsPositionCommand, Mode=OneTime}" CommandParameter="Middle" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </TextBlock>
+                        <TextBlock x:Uid="High" Text="high" Grid.Column="2" HorizontalAlignment="Right" Style="{StaticResource SettingsChooseLable}" Foreground="{StaticResource ForegroundColor}">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchControlsPositionCommand, Mode=OneTime}" CommandParameter="High" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+                <TextBlock x:Uid="IntervalControl" Text="Interval between controls" Style="{StaticResource SettingsTitle}" Foreground="{StaticResource ForegroundColor}" Visibility="{Binding ControlType, Converter={StaticResource ControlTypeToVisibility},FallbackValue=Hidden, ConverterParameter=Buttons, Mode=OneWay}"/>
+                <Grid Visibility="{Binding ControlType, Converter={StaticResource ControlTypeToVisibility},FallbackValue=Hidden, ConverterParameter=Buttons, Mode=OneWay}" Margin="0,0,0,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Margin="10,0,10,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Background="Transparent">
+                            <svg:OnCircle Margin="5" Visibility="{Binding ControlMargin, Converter={StaticResource ControlMarginToVisibility},FallbackValue=Hidden, ConverterParameter='Small,true', Mode=OneWay}"/>
+                            <svg:OffCircle Margin="5" Visibility="{Binding ControlMargin, Converter={StaticResource ControlMarginToVisibility},FallbackValue=Hidden, ConverterParameter='Small,false', Mode=OneWay}"/>
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchControlsMarginCommand, Mode=OneTime}" CommandParameter="Small" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </Grid>
+                        <Grid Grid.Column="1"  Style="{StaticResource SettingsChooseLine}" Background="{StaticResource AccentDarkColor}"/>
+                        <Grid Grid.Column="2" Background="Transparent">
+                            <svg:OnCircle Margin="5" Visibility="{Binding ControlMargin, Converter={StaticResource ControlMarginToVisibility},FallbackValue=Hidden, ConverterParameter='Medium,true', Mode=OneWay}"/>
+                            <svg:OffCircle Margin="5" Visibility="{Binding ControlMargin, Converter={StaticResource ControlMarginToVisibility},FallbackValue=Hidden, ConverterParameter='Medium,false', Mode=OneWay}"/>
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchControlsMarginCommand, Mode=OneTime}" CommandParameter="Medium" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </Grid>
+                        <Grid Grid.Column="3" Style="{StaticResource SettingsChooseLine}" Background="{StaticResource AccentDarkColor}"/>
+                        <Grid Grid.Column="4" Background="Transparent">
+                            <svg:OnCircle Margin="5" Visibility="{Binding ControlMargin, Converter={StaticResource ControlMarginToVisibility},FallbackValue=Hidden, ConverterParameter='Big,true', Mode=OneWay}"/>
+                            <svg:OffCircle Margin="5" Visibility="{Binding ControlMargin, Converter={StaticResource ControlMarginToVisibility},FallbackValue=Hidden, ConverterParameter='Big,false', Mode=OneWay}"/>
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchControlsMarginCommand, Mode=OneTime}" CommandParameter="Big" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Uid="Small" Text="small" Grid.Column="0" HorizontalAlignment="Left" Style="{StaticResource SettingsChooseLable}" Foreground="{StaticResource ForegroundColor}">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchControlsMarginCommand, Mode=OneTime}" CommandParameter="Small" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </TextBlock>
+                        <TextBlock x:Uid="Medium" Text="medium" Grid.Column="1" HorizontalAlignment="Center" Style="{StaticResource SettingsChooseLable}" Foreground="{StaticResource ForegroundColor}">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchControlsMarginCommand, Mode=OneTime}" CommandParameter="Medium" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </TextBlock>
+                        <TextBlock x:Uid="Big" Text="big" Grid.Column="2" HorizontalAlignment="Right" Style="{StaticResource SettingsChooseLable}" Foreground="{StaticResource ForegroundColor}">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchControlsMarginCommand, Mode=OneTime}" CommandParameter="Big" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+                <Grid Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Uid="Shadow" Grid.Column="0" Text="Shadow" Style="{StaticResource SettingsTitle}" Foreground="{StaticResource ForegroundColor}"/>
+                    <Grid Grid.Column="2" Background="Transparent" Width="80" Height="26">
+                        <svg:On HorizontalAlignment="Right" Visibility="{Binding IsShadowAvailable, Converter={StaticResource BooleanParamToVisibility},FallbackValue=Hidden, ConverterParameter=true, Mode=OneWay}" HorizontalContentAlignment="Center"/>
+                        <svg:Off HorizontalAlignment="Right" Visibility="{Binding IsShadowAvailable, Converter={StaticResource BooleanParamToVisibility},FallbackValue=Hidden, ConverterParameter=false, Mode=OneWay}" HorizontalContentAlignment="Center"/>
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                <core:InvokeCommandAction Command="{Binding SwitchShadowAvailableCommand, Mode=OneTime}" />
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                    </Grid>
+                </Grid>
+                <Grid Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Uid="SoundFX" Text="Sound FX" Style="{StaticResource SettingsTitle}" Foreground="{StaticResource ForegroundColor}"/>
+                    <Grid Grid.Column="2" Background="Transparent" Width="80" Height="26">
+                        <svg:On HorizontalAlignment="Right" Visibility="{Binding IsAudioAvailable, Converter={StaticResource BooleanParamToVisibility},FallbackValue=Hidden, ConverterParameter=true, Mode=OneWay}" HorizontalContentAlignment="Center"/>
+                        <svg:Off HorizontalAlignment="Right" Visibility="{Binding IsAudioAvailable, Converter={StaticResource BooleanParamToVisibility},FallbackValue=Hidden, ConverterParameter=false, Mode=OneWay}" HorizontalContentAlignment="Center"/>
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                <core:InvokeCommandAction Command="{Binding SwitchAudioCommand, Mode=OneTime}" />
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                    </Grid>
+                </Grid>
+                <Grid Height="80">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Uid="Vibration" Text="Vibration" Style="{StaticResource SettingsTitle}" Foreground="{StaticResource ForegroundColor}"/>
+                    <Grid Grid.Column="2" Background="Transparent"  Width="80" Height="26">
+                        <svg:On HorizontalAlignment="Right" Visibility="{Binding IsVibrateAvailable, Converter={StaticResource BooleanParamToVisibility},FallbackValue=Hidden, ConverterParameter=true, Mode=OneWay}" HorizontalContentAlignment="Center"/>
+                        <svg:Off HorizontalAlignment="Right" Visibility="{Binding IsVibrateAvailable, Converter={StaticResource BooleanParamToVisibility},FallbackValue=Hidden, ConverterParameter=false, Mode=OneWay}" HorizontalContentAlignment="Center"/>
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                <core:InvokeCommandAction Command="{Binding SwitchVibrateCommand, Mode=OneTime}" />
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                    </Grid>
+                </Grid>
+                <TextBlock x:Uid="Theme" Text="Theme" Style="{StaticResource SettingsTitle}" Foreground="{StaticResource ForegroundColor}"/>
+                <Grid Margin="0,0,0,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Margin="10,0,10,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Background="Transparent">
+                            <svg:OnCircle Margin="5" Visibility="{Binding ThemeScheme, Converter={StaticResource ThemeSchemeToVisibility},FallbackValue=Hidden, ConverterParameter='Dark,true', Mode=OneWay}"/>
+                            <svg:OffCircle Margin="5" Visibility="{Binding ThemeScheme, Converter={StaticResource ThemeSchemeToVisibility},FallbackValue=Hidden, ConverterParameter='Dark,false', Mode=OneWay}"/>
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchThemeAndNotifyCommand, Mode=OneTime}" CommandParameter="Dark" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </Grid>
+                        <Grid Grid.Column="1" Style="{StaticResource SettingsChooseLine}" Background="{StaticResource AccentDarkColor}"/>
+                        <Grid Grid.Column="2" Background="Transparent">
+                            <svg:OnCircle Margin="5" Visibility="{Binding ThemeScheme, Converter={StaticResource ThemeSchemeToVisibility},FallbackValue=Hidden, ConverterParameter='Auto,true', Mode=OneWay}"/>
+                            <svg:OffCircle Margin="5" Visibility="{Binding ThemeScheme, Converter={StaticResource ThemeSchemeToVisibility},FallbackValue=Hidden, ConverterParameter='Auto,false', Mode=OneWay}"/>
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchThemeAndNotifyCommand, Mode=OneTime}" CommandParameter="Auto" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </Grid>
+                        <Grid Grid.Column="3" Style="{StaticResource SettingsChooseLine}" Background="{StaticResource AccentDarkColor}"/>
+                        <Grid Grid.Column="4" Background="Transparent">
+                            <svg:OnCircle Margin="5" Visibility="{Binding ThemeScheme, Converter={StaticResource ThemeSchemeToVisibility},FallbackValue=Hidden, ConverterParameter='Light,true', Mode=OneWay}"/>
+                            <svg:OffCircle Margin="5" Visibility="{Binding ThemeScheme, Converter={StaticResource ThemeSchemeToVisibility},FallbackValue=Hidden, ConverterParameter='Light,false', Mode=OneWay}"/>
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchThemeAndNotifyCommand, Mode=OneTime}" CommandParameter="Light" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Uid="Dark" Text="dark" Grid.Column="0" HorizontalAlignment="Left" Style="{StaticResource SettingsChooseLable}" Foreground="{StaticResource ForegroundColor}">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchThemeAndNotifyCommand, Mode=OneTime}" CommandParameter="Dark" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </TextBlock>
+                        <TextBlock x:Uid="Auto" Text="auto" Grid.Column="1" HorizontalAlignment="Center" Style="{StaticResource SettingsChooseLable}" Foreground="{StaticResource ForegroundColor}">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchThemeAndNotifyCommand, Mode=OneTime}" CommandParameter="Auto" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </TextBlock>
+                        <TextBlock x:Uid="Light" Text="light" Grid.Column="2" HorizontalAlignment="Right" Style="{StaticResource SettingsChooseLable}" Foreground="{StaticResource ForegroundColor}">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchThemeAndNotifyCommand, Mode=OneTime}" CommandParameter="Light" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+                <TextBlock x:Uid="Color" Text="Color" Style="{StaticResource SettingsTitle}" Foreground="{StaticResource ForegroundColor}"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="140"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="140"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Background="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <svg:ColorPalete Grid.Row="0" DataContext="{Binding Path=ColorsShemes[0], Mode=OneTime}"/>
+                            <Grid Grid.Row="2" Height="4" Background="{ThemeResource SystemColorControlAccentBrush}" VerticalAlignment="Bottom" Visibility="{Binding CurrentColorShemeIndex, Converter={StaticResource IntToVisibility},FallbackValue=Hidden, ConverterParameter=0}"/>
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchColorCommand, Mode=OneTime}" CommandParameter="0"/>
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </Grid>
+                        <Grid Grid.Column="2" Background="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <svg:ColorPalete Grid.Row="0" DataContext="{Binding Path=ColorsShemes[1], Mode=OneTime}"/>
+                            <Grid Grid.Row="2" Height="4" Background="{ThemeResource SystemColorControlAccentBrush}" VerticalAlignment="Bottom" Visibility="{Binding CurrentColorShemeIndex, Converter={StaticResource IntToVisibility},FallbackValue=Hidden, ConverterParameter=1}"/>
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchColorCommand, Mode=OneTime}" CommandParameter="1"/>
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </Grid>
+                        <Grid Grid.Column="4" Background="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <svg:ColorPalete Grid.Row="0" DataContext="{Binding Path=ColorsShemes[2], Mode=OneTime}"/>
+                            <Grid Grid.Row="2" Height="4" Background="{ThemeResource SystemColorControlAccentBrush}" VerticalAlignment="Bottom" Visibility="{Binding CurrentColorShemeIndex, Converter={StaticResource IntToVisibility},FallbackValue=Hidden, ConverterParameter=2}"/>
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchColorCommand, Mode=OneTime}" CommandParameter="2"/>
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".5*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width=".5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="2" Background="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <svg:ColorPalete Grid.Row="0" DataContext="{Binding Path=ColorsShemes[3], Mode=OneTime}"/>
+                            <Grid Grid.Row="2" Height="4" Background="{ThemeResource SystemColorControlAccentBrush}" VerticalAlignment="Bottom" Visibility="{Binding CurrentColorShemeIndex, Converter={StaticResource IntToVisibility},FallbackValue=Hidden, ConverterParameter=3}"/>
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchColorCommand, Mode=OneTime}" CommandParameter="3"/>
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </Grid>
+                        <Grid Grid.Column="4" Background="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <svg:ColorPalete Grid.Row="0" DataContext="{Binding Path=ColorsShemes[4], Mode=OneTime}"/>
+                            <Grid Grid.Row="2" Height="4" Background="{ThemeResource SystemColorControlAccentBrush}" VerticalAlignment="Bottom" Visibility="{Binding CurrentColorShemeIndex, Converter={StaticResource IntToVisibility},FallbackValue=Hidden, ConverterParameter=4}"/>
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchColorCommand, Mode=OneTime}" CommandParameter="4"/>
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -1,0 +1,672 @@
+﻿<Page
+    x:Name="Page"
+    x:Class="Tetris.Pages.Game"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tetris.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:controls="using:Tetris.Controls"
+    xmlns:helpers="using:Tetris.Helpers"
+    xmlns:svg="using:Tetris.Controls.SVG"
+    mc:Ignorable="d" 
+    Background="{StaticResource BackgroundColor}">
+    <Page.Resources>
+        <helpers:ActualSizePropertyProxy Element="{Binding ElementName=Page}" x:Name="PageSizeProxy"/>
+        <helpers:ActualSizePropertyProxy Element="{Binding ElementName=MenuWidth}" x:Name="MenuSizeProxy"/>
+    </Page.Resources>
+    <Grid Background="{StaticResource BackgroundColor}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="MenuWidth" Grid.Column="1"/>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.34*" x:Name="GameBoardLeftPadding"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.34*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0"></Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1"></Grid>
+                <Grid Grid.Row="2">
+                    <Canvas x:Name="MainBoardCanvas" Background="Tomato"/>
+                </Grid>
+                <Grid Grid.Row="3"></Grid>
+            </Grid>
+            <Grid Grid.Column="2">
+            </Grid>
+        </Grid>
+        <controls:Overlay x:Name="MenuOverlay" IsAvailable="{Binding IsMenuAvailable, Mode=OneWay}" Visibility="Collapsed">
+            <Grid x:Name="MenuOverlayContent">
+                <Grid x:Name="MenuGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" x:Name="LeftMenuWidth"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="2*" x:Name="RightMenuWidth"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Height="{Binding ActualHeight, ElementName=MenuOverlay, Mode=OneTime}" Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25*"/>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="6*"/>
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="13*"/>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height=".2*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" x:Name="LeftLogoWidth"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*" x:Name="RightLogoWidth"/>
+                                </Grid.ColumnDefinitions>
+                                <svg:MainLogo Grid.Column="1"/>
+                            </Grid>
+                            <TextBlock x:Uid="ApplicationName" Grid.Row="2" Text="TETRIS" Style="{StaticResource MenuLogo}" FontSize="48"/>
+
+                        </Grid>
+                        <Grid Grid.Row="1" Visibility="{Binding IsContinueAvailable, Converter={StaticResource BooleanToVisibility}, FallbackValue=Hidden}" Background="Transparent" Height="71" VerticalAlignment="Bottom">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding PauseResumeCommand, Mode=OneWay}"/>
+                                </core:EventTriggerBehavior>
+                                <core:EventTriggerBehavior EventName="PointerEntered">
+                                    <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}"/>
+                                </core:EventTriggerBehavior>
+                                <core:EventTriggerBehavior EventName="PointerExited">
+                                    <core:ChangePropertyAction PropertyName="Background"/>
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                            <Border Style="{StaticResource ButtonBorder}"/>
+                            <TextBlock x:Uid="MenuContinue" Text="CONTINUE" Style="{StaticResource MenuLable}"/>
+                        </Grid>
+                        <Grid Grid.Row="3" Background="Transparent">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding PauseRestartCommand, Mode=OneWay}"/>
+                                </core:EventTriggerBehavior>
+                                <core:EventTriggerBehavior EventName="PointerEntered">
+                                    <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}"/>
+                                </core:EventTriggerBehavior>
+                                <core:EventTriggerBehavior EventName="PointerExited">
+                                    <core:ChangePropertyAction PropertyName="Background"/>
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                            <Border Style="{StaticResource ButtonBorder}"/>
+                            <TextBlock x:Uid="MenuNewGame" Text="NEW GAME"  Style="{StaticResource MenuLable}"/>
+                        </Grid>
+                        <Grid Grid.Row="5"  Background="Transparent">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchRecordsCommand, Mode=OneWay}"/>
+                                </core:EventTriggerBehavior>
+                                <core:EventTriggerBehavior EventName="PointerEntered">
+                                    <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}"/>
+                                </core:EventTriggerBehavior>
+                                <core:EventTriggerBehavior EventName="PointerExited">
+                                    <core:ChangePropertyAction PropertyName="Background"/>
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                            <Border Style="{StaticResource ButtonBorder}"/>
+                            <TextBlock x:Uid="MenuRecords" Text="RECORDS" Style="{StaticResource MenuLable}"/>
+                        </Grid>
+                        <Grid Grid.Row="7" Background="Transparent">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchAboutCommand, Mode=OneWay}"/>
+                                </core:EventTriggerBehavior>
+                                <core:EventTriggerBehavior EventName="PointerEntered">
+                                    <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}"/>
+                                </core:EventTriggerBehavior>
+                                <core:EventTriggerBehavior EventName="PointerExited">
+                                    <core:ChangePropertyAction PropertyName="Background"/>
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                            <Border Style="{StaticResource ButtonBorder}"/>
+                            <TextBlock x:Uid="MenuAbout" Text="ABOUT" Style="{StaticResource MenuLable}"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid x:Name="FooterMenu">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="48*"/>
+                        <RowDefinition Height="6*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*" x:Name="FooterMenuWidthBetween"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="AudioButtonGrid" Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="1" Grid.Column="1" Background="{Binding IsAudioAvailable, ConverterParameter=Volume, Converter={StaticResource BooleanToBrush}}">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchAudioCommand, Mode=OneWay}"/>
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </Border>
+                    </Grid>
+                    <Grid x:Name="SettingsButtonGrid" Grid.Row="1" Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="1" Grid.Column="1" Background="{StaticResource Settings}">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchSettingsCommand, Mode=OneWay}"/>
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </controls:Overlay>
+        <controls:Overlay x:Name="SettingsOverlay" Visibility="Collapsed" IsAvailable="{Binding IsSettingsAvailable, Mode=OneWay}">
+            <Grid Height="{Binding ActualHeight, ElementName=SettingsOverlay}">
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="6*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="13*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Uid="SettingsTheme" Grid.Column="1" Grid.Row="1" Text="Theme:" Style="{StaticResource SettingsLable}"/>
+                    <TextBlock x:Uid="SettingsColor" Grid.Column="1" Grid.Row="6" Text="Color:" Style="{StaticResource SettingsLable}"/>
+                    <ListView Grid.Column="1" Grid.Row="2" ItemsSource="{Binding Themes}" SelectedItem="{Binding SelectedTheme, Mode=TwoWay}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Width="{Binding ActualWidthValue, ElementName=MenuSizeProxy}" Height="30" Margin="0,0,0,7">
+                                    <Border Style="{StaticResource ButtonBorder}" Visibility="{Binding IsSelected, Converter={StaticResource BooleanToVisibility}}"/>
+                                    <Grid>
+                                        <TextBlock Text="{Binding Description}"
+                                                   FontSize="20" TextAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <ListView Grid.Column="1" Grid.Row="8" ItemsSource="{Binding ColorsShemes}" SelectedItem="{Binding SelectedColorSheme, Mode=TwoWay}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Width="{Binding ActualWidthValue, ElementName=MenuSizeProxy}" Height="40" Margin="0,0,0,7">
+                                    <Border Style="{StaticResource ButtonBorder}" Visibility="{Binding IsSelected, Converter={StaticResource BooleanToVisibility}}"/>
+                                    <Grid Margin="5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="1"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="1"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="1"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="1"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="1"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="1"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0" Background="{Binding FirstColor}"/>
+                                        <Grid Grid.Column="2" Background="{Binding SecondColor}"/>
+                                        <Grid Grid.Column="4" Background="{Binding ThirdColor}"/>
+                                        <Grid Grid.Column="6" Background="{Binding FourthColor}"/>
+                                        <Grid Grid.Column="8" Background="{Binding FifthColor}"/>
+                                        <Grid Grid.Column="10" Background="{Binding SixthColor}"/>
+                                        <Grid Grid.Column="12" Background="{Binding SeventhColor}"/>
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="11*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="12*"/>
+                        <RowDefinition Height="2"/>
+                        <RowDefinition Height="18*"/>
+                        <RowDefinition Height="2"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="0" Grid.Row="1" Style="{StaticResource SeparateHorizontalLize}"/>
+                    <Grid Grid.Column="0" Grid.Row="3" Style="{StaticResource SeparateHorizontalLize}"/>
+                </Grid>
+            </Grid>
+
+        </controls:Overlay>
+        <controls:Overlay x:Name="RecordsOverlay" Visibility="Collapsed" IsAvailable="{Binding IsRecordsAvailable, Mode=OneWay}">
+            <Grid Height="{Binding ActualHeight, ElementName=RecordsOverlay}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ListView x:Name="ResultsList" Grid.Row="0" ItemsSource="{Binding GameResults}" Margin="0,20,0,0" SelectionMode="None" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Width="{Binding ActualWidthValue, ElementName=PageSizeProxy}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="2"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="{Binding Number}" HorizontalAlignment="Right" Margin="0,0,5,0" FontSize="25"/>
+                                    <TextBlock Grid.Column="2" Text="{Binding PlayerName}" HorizontalAlignment="Center" Margin="5,0,5,0" FontSize="25"/>
+                                    <TextBlock Grid.Column="4" Text="{Binding Score}" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="25"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="7*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Background="Transparent">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerEntered">
+                                    <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}"/>
+                                </core:EventTriggerBehavior>
+                                <core:EventTriggerBehavior EventName="PointerExited">
+                                    <core:ChangePropertyAction PropertyName="Background">
+                                        <core:ChangePropertyAction.Value>
+                                            <SolidColorBrush Color="Transparent"/>
+                                        </core:ChangePropertyAction.Value>
+                                    </core:ChangePropertyAction>
+                                </core:EventTriggerBehavior>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding SwitchRecordsCommand, Mode=OneWay}"/>
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                            <Border Style="{StaticResource ButtonBorder}"/>
+                            <Border Background="{StaticResource Home}" Margin="8"/>
+                        </Grid>
+                        <Grid Grid.Column="3" Background="Transparent">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerEntered">
+                                    <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}"/>
+                                </core:EventTriggerBehavior>
+                                <core:EventTriggerBehavior EventName="PointerExited">
+                                    <core:ChangePropertyAction PropertyName="Background">
+                                        <core:ChangePropertyAction.Value>
+                                            <SolidColorBrush Color="Transparent"/>
+                                        </core:ChangePropertyAction.Value>
+                                    </core:ChangePropertyAction>
+                                </core:EventTriggerBehavior>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding PauseRestartCommand, Mode=OneWay}"/>
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                            <Border Style="{StaticResource ButtonBorder}"/>
+                            <Border Background="{StaticResource Play}" Margin="8"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="1" Style="{StaticResource SeparateLinesGradien}"/>
+                    <Grid Grid.Column="3" Style="{StaticResource SeparateLinesGradien}"/>
+
+                </Grid>
+            </Grid>
+        </controls:Overlay>
+        <controls:Overlay x:Name="GameResultOverlay" Visibility="Collapsed" IsAvailable="{Binding IsGameResultAvailable, Mode=OneWay}">
+            <Grid Height="{Binding ActualHeight, ElementName=GameResultOverlay}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height=".5*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Uid="ResultTime" Grid.Column="1" Grid.Row="1" Text="TIME" Style="{StaticResource GameResultLable}"/>
+                <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Time, FallbackValue='00:00:00', Mode=OneWay}" Style="{StaticResource GameResultText}"/>
+                <Grid Grid.Column="1" Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="2.3*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Uid="ResultLevel" Grid.Row="1" Text="LEVEL" Style="{StaticResource GameResultLable}"/>
+                        <TextBlock Grid.Row="3" Text="{Binding Level, FallbackValue='00', Mode=OneWay}"  Style="{StaticResource GameResultText}"/>
+                    </Grid>
+                    <Grid Grid.Column="1" Background="{StaticResource ForegroundColor}"/>
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="2.3*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Uid="ResultScore" Grid.Row="1" Text="SCORE" Style="{StaticResource GameResultLable}"/>
+                        <TextBlock Grid.Row="3" Text="{Binding Score, FallbackValue='0000', Mode=OneWay}" Style="{StaticResource GameResultText}"/>
+                    </Grid>
+                </Grid>
+                <TextBox x:Uid="NickName" Grid.Row="7" Grid.Column="1" Style="{StaticResource NicknameInput}" Text="{Binding PlayerName, Mode=TwoWay}"/>
+                <Grid Grid.Column="1" Grid.Row="9">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="7*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1" Background="Transparent">
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="PointerEntered">
+                                <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}"/>
+                            </core:EventTriggerBehavior>
+                            <core:EventTriggerBehavior EventName="PointerExited">
+                                <core:ChangePropertyAction PropertyName="Background">
+                                    <core:ChangePropertyAction.Value>
+                                        <SolidColorBrush Color="Transparent"/>
+                                    </core:ChangePropertyAction.Value>
+                                </core:ChangePropertyAction>
+                            </core:EventTriggerBehavior>
+                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                <core:InvokeCommandAction Command="{Binding SwitchRecordsCommand, Mode=OneWay}"/>
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                        <Border Style="{StaticResource ButtonBorder}"/>
+                        <Border Background="{StaticResource Rating}" Margin="8"/>
+                    </Grid>
+                    <Grid Grid.Column="3" Background="Transparent">
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="PointerEntered">
+                                <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}"/>
+                            </core:EventTriggerBehavior>
+                            <core:EventTriggerBehavior EventName="PointerExited">
+                                <core:ChangePropertyAction PropertyName="Background">
+                                    <core:ChangePropertyAction.Value>
+                                        <SolidColorBrush Color="Transparent"/>
+                                    </core:ChangePropertyAction.Value>
+                                </core:ChangePropertyAction>
+                            </core:EventTriggerBehavior>
+                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                <core:InvokeCommandAction Command="{Binding PauseRestartCommand, Mode=OneWay}"/>
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                        <Border Style="{StaticResource ButtonBorder}"/>
+                        <Border Background="{StaticResource Restart}" Margin="8"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </controls:Overlay>
+        <Grid x:Name="AboutGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" x:Name="AboutOverlayLeft"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="2*" x:Name="AboutOverlayRight"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+            <controls:Overlay x:Name="AboutOverlay" Grid.Row="1" Grid.Column="1" Visibility="Collapsed" IsAvailable="{Binding IsAboutAvailable, Mode=OneWay}">
+                <Grid x:Name="AboutOverlayContent" Height="{Binding ActualHeight, ElementName=AboutOverlay}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="7.5*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="4*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="1" Background="{StaticResource BeatCodeLogo}"/>
+                        </Grid>
+                        <Grid Grid.Row="1" Grid.Column="2">
+                            <StackPanel>
+                                <TextBlock x:Uid="Developer" Text="Developer:" Style="{StaticResource AboutLable}"/>
+                                <TextBlock x:Uid="DanilName" Text="Danil Pavlov" Style="{StaticResource AboutText}"/>
+                                <TextBlock x:Uid="Designer" Text="Designer:" Style="{StaticResource AboutLable}"/>
+                                <TextBlock x:Uid="AnnName" Text="Ann Zadnepryanskaya" Style="{StaticResource AboutText}"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Background="Transparent">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding BackPressCommand, Mode=OneWay}"/>
+                                </core:EventTriggerBehavior>
+                                <core:EventTriggerBehavior EventName="PointerEntered">
+                                    <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}"/>
+                                </core:EventTriggerBehavior>
+                                <core:EventTriggerBehavior EventName="PointerExited">
+                                    <core:ChangePropertyAction PropertyName="Background"/>
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                            <Border Style="{StaticResource ButtonBorder}"/>
+                            <TextBlock x:Uid="Back" Text="BACK" Style="{StaticResource MenuLable}"/>
+                        </Grid>
+                        <Grid Grid.Column="2" Background="Transparent">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="PointerPressed">
+                                    <core:InvokeCommandAction Command="{Binding RateAppCommand, Mode=OneWay}"/>
+                                </core:EventTriggerBehavior>
+                                <core:EventTriggerBehavior EventName="PointerEntered">
+                                    <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}"/>
+                                </core:EventTriggerBehavior>
+                                <core:EventTriggerBehavior EventName="PointerExited">
+                                    <core:ChangePropertyAction PropertyName="Background"/>
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                            <Border Style="{StaticResource ButtonBorder}"/>
+                            <TextBlock x:Uid="MenuRate" Text="RATE" Style="{StaticResource MenuLable}"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </controls:Overlay>
+        </Grid>
+        <controls:Overlay x:Name="RestartNotification" Visibility="Collapsed" IsAvailable="{Binding IsRestartNotificationAvailable, Mode=OneWay}" Background="Transparent">
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="Tapped">
+                    <core:InvokeCommandAction Command="{Binding DisableRestartNotificationCommand, Mode=OneWay}"/>
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+            <Grid Height="{Binding ActualHeight, ElementName=MenuOverlay, Mode=OneTime}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Background="{ThemeResource SystemColorControlAccentBrush}">
+                    <TextBlock x:Uid="RestartNotification" Text="New settings will take effect after you restart game." Foreground="White" FontSize="25" VerticalAlignment="Center" TextAlignment="Justify" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="20"/>
+                </Grid>
+                <Grid Grid.Row="1" Background="{StaticResource BackgroundColor}" Opacity=".7"/>
+            </Grid>
+        </controls:Overlay>
+        <controls:Overlay x:Name="RateAppNotification" Visibility="Collapsed" IsAvailable="{Binding IsRateNotificationAvailable, Mode=OneWay}">
+            <Grid Height="{Binding ActualHeight, ElementName=MenuOverlay, Mode=OneTime}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="37*"/>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="6*"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Uid="RateAppProp" Grid.Column="1" Text="Do you like game? Want it to become even better? Please, support us with your rate" TextAlignment="Justify" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="{StaticResource ForegroundColor}" FontSize="35"/>
+                <Grid Grid.Column="1" Grid.Row="1" Background="Transparent">
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="PointerPressed">
+                            <core:InvokeCommandAction Command="{Binding RateAppCommand, Mode=OneWay}"/>
+                        </core:EventTriggerBehavior>
+                        <core:EventTriggerBehavior EventName="PointerEntered">
+                            <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}"/>
+                        </core:EventTriggerBehavior>
+                        <core:EventTriggerBehavior EventName="PointerExited">
+                            <core:ChangePropertyAction PropertyName="Background"/>
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                    <Border Style="{StaticResource ButtonBorder}"/>
+                    <TextBlock x:Uid="MenuRate" Text="RATE" Style="{StaticResource MenuLable}"/>
+                </Grid>
+                <Grid Grid.Column="1" Grid.Row="3" Background="Transparent">
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="PointerPressed">
+                            <core:InvokeCommandAction Command="{Binding DisableRateNotificationCommand, Mode=OneWay}"/>
+                        </core:EventTriggerBehavior>
+                        <core:EventTriggerBehavior EventName="PointerEntered">
+                            <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}"/>
+                        </core:EventTriggerBehavior>
+                        <core:EventTriggerBehavior EventName="PointerExited">
+                            <core:ChangePropertyAction PropertyName="Background"/>
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                    <Border Style="{StaticResource ButtonBorder}"/>
+                    <TextBlock x:Uid="NoThanks" Text="NO, THANKS " Style="{StaticResource MenuLable}"/>
+                </Grid>
+            </Grid>
+        </controls:Overlay>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="Group">
+                <VisualState x:Name="Default"/>
+                <VisualState x:Name="Medium"/>
+                <VisualState x:Name="Small">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RightLogoWidth" Storyboard.TargetProperty="Width">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="*" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="LeftLogoWidth" Storyboard.TargetProperty="Width">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="*" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="LeftMenuWidth" Storyboard.TargetProperty="Width">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="10" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RightMenuWidth" Storyboard.TargetProperty="Width">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="10" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="FooterMenuWidthBetween" Storyboard.TargetProperty="Width">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="0" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="AboutOverlayLeft" Storyboard.TargetProperty="Width">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="10" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="AboutOverlayRight" Storyboard.TargetProperty="Width">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="10" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="GameBoardLeftPadding" Storyboard.TargetProperty="Width">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="0" />
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</Page>

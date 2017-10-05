@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>1348887d-c2ac-4932-acfd-3126c9e0c2fb</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Tetris</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManagerException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Contracts\IBlock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Contracts\IGameViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\AboutMenu.xaml.cs">
+      <DependentUpon>AboutMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\BlockUI.xaml.cs">
+      <DependentUpon>BlockUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\DonateMenu.xaml.cs">
+      <DependentUpon>DonateMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\GameResultMenu.xaml.cs">
+      <DependentUpon>GameResultMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ModeMenu.xaml.cs">
+      <DependentUpon>ModeMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Overlay.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\RateAppNotification.xaml.cs">
+      <DependentUpon>RateAppNotification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\RecordsMenu.xaml.cs">
+      <DependentUpon>RecordsMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\RestartNotification.xaml.cs">
+      <DependentUpon>RestartNotification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SettingsMenu.xaml.cs">
+      <DependentUpon>SettingsMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ShadowBlockUI.xaml.cs">
+      <DependentUpon>ShadowBlockUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\BannedGlobal.xaml.cs">
+      <DependentUpon>BannedGlobal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\BigDonate.xaml.cs">
+      <DependentUpon>BigDonate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\ButtonInstruction.xaml.cs">
+      <DependentUpon>ButtonInstruction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\ButtonsControlType.xaml.cs">
+      <DependentUpon>ButtonsControlType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\CloseButton.xaml.cs">
+      <DependentUpon>CloseButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\ColorPalete.xaml.cs">
+      <DependentUpon>ColorPalete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\Food.xaml.cs">
+      <DependentUpon>Food.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\GameDownArrow.xaml.cs">
+      <DependentUpon>GameDownArrow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\GameLeftArrow.xaml.cs">
+      <DependentUpon>GameLeftArrow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\GameRightArrow.xaml.cs">
+      <DependentUpon>GameRightArrow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\GameRotate.xaml.cs">
+      <DependentUpon>GameRotate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\GroupLogo.xaml.cs">
+      <DependentUpon>GroupLogo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\HelpWithArrow.xaml.cs">
+      <DependentUpon>HelpWithArrow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\LittleDonate.xaml.cs">
+      <DependentUpon>LittleDonate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\MainLogo.xaml.cs">
+      <DependentUpon>MainLogo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\MenuLeftArrow.xaml.cs">
+      <DependentUpon>MenuLeftArrow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\MenuRightArrow.xaml.cs">
+      <DependentUpon>MenuRightArrow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\MiddleDonate.xaml.cs">
+      <DependentUpon>MiddleDonate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\Off.xaml.cs">
+      <DependentUpon>Off.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\OffCircle.xaml.cs">
+      <DependentUpon>OffCircle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\On.xaml.cs">
+      <DependentUpon>On.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\OnCircle.xaml.cs">
+      <DependentUpon>OnCircle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\Pause.xaml.cs">
+      <DependentUpon>Pause.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\PauseWithArrow.xaml.cs">
+      <DependentUpon>PauseWithArrow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\Play.xaml.cs">
+      <DependentUpon>Play.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\Rate.xaml.cs">
+      <DependentUpon>Rate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\Stripe.xaml.cs">
+      <DependentUpon>Stripe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\SwipeControlType.xaml.cs">
+      <DependentUpon>SwipeControlType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\SwipeInstruction.xaml.cs">
+      <DependentUpon>SwipeInstruction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SVG\Web.xaml.cs">
+      <DependentUpon>Web.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BooleanParamToVisibility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BooleanToBrush.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BooleanToHorizontalAighment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BooleanToVisibility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ControlMarginToVisibility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ControlPositionToVisibility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ControlTypeToVisibility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\CountToVisibility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\GameResultToVisibility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\IntToVisibility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\RecordsModeToVisibility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\RecordsTypeToOpacity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ThemeSchemeToVisibility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DesignData\Records.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engines\AudioEngine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engines\GameEngine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\ControlType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\LevelsNumber.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\LevelsScore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\Margin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\Mode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\Position.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\GameBlocks.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\GameSettingsKeys.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\GameStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\RecordsMode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\RecordsType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\SuspendingKeys.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\Theme.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ActualSizePropertyProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ColorHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\JsonSerializeHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ResolutionHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\TimeHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\ControlPositionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\ThemeManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\RecordManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\SettingsManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\ColorShemeManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Blocks\BaseBlock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Blocks\EmptyBlock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Blocks\I.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Blocks\J.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Blocks\L.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Blocks\O.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Blocks\S.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Blocks\T.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Blocks\Z.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Core\Audio.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Core\ColorSheme.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Core\ControlMargin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Core\ControlPosition.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Core\GameResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Core\GameSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Core\ThemeScheme.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Core\ViewConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Scene\GridIndex.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Suspend\SuspendingBlock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Suspend\SuspendingGame.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Suspend\SuspendingBoardBlock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Suspend\SuspendingGameEngine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Suspend\SuspendingSession.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\GameViewModelVnext.cs" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\de\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\es\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\fr\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\ja\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\pt\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\ru\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\uk\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\zh-cn\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\zh-hk\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\zh-sg\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\zh-tw\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\AboutMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\BlockUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\DonateMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\GameResultMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\Help.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\ModeMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\RateAppNotification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\RecordsMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\RestartNotification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SettingsMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\ShadowBlockUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\BannedGlobal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\BigDonate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\ButtonInstruction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\ButtonsControlType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\CloseButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\ColorPalete.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\Food.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\GameDownArrow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\GameLeftArrow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\GameRightArrow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\GameRotate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\GroupLogo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\Help.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\HelpWithArrow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\LittleDonate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\MainLogo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\MenuLeftArrow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\MenuRightArrow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\MiddleDonate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\Off.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\OffCircle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\On.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\OnCircle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\Pause.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\PauseWithArrow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\Play.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\Rate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\Stripe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\SwipeControlType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\SwipeInstruction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SVG\Web.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\AboutMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\DarkLightTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\DonateMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\GameResultMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\GameScene.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\HelpMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\ModeMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\NicknameInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\Overlay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\RecordsMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\SettingsListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\SettingsMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\audio\dropdown.wav" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\audio\removerow.wav" />
+  </ItemGroup>
+</Project>

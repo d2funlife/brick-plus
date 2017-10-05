@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About.Text" xml:space="preserve">
+    <value>SOBRE</value>
+  </data>
+  <data name="Anna.Text" xml:space="preserve">
+    <value>Ann Pavlova</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="ApplicationName.Text" xml:space="preserve">
+    <value>BLOCOS+</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Blocos+</value>
+  </data>
+  <data name="Auto.Text" xml:space="preserve">
+    <value>automático</value>
+  </data>
+  <data name="Back.Text" xml:space="preserve">
+    <value>VOLTAR</value>
+  </data>
+  <data name="BestScore.Text" xml:space="preserve">
+    <value>Melhor pontuação</value>
+  </data>
+  <data name="BestTime.Text" xml:space="preserve">
+    <value>Melhor tempo</value>
+  </data>
+  <data name="Big.Text" xml:space="preserve">
+    <value>grande</value>
+  </data>
+  <data name="Bottom.Text" xml:space="preserve">
+    <value>embaixo</value>
+  </data>
+  <data name="Buttons.Text" xml:space="preserve">
+    <value>botões</value>
+  </data>
+  <data name="CheckApps.Text" xml:space="preserve">
+    <value>Confira nossos apps</value>
+  </data>
+  <data name="Classic.Text" xml:space="preserve">
+    <value>Clássico</value>
+  </data>
+  <data name="ClearDesign.Text" xml:space="preserve">
+    <value>Design limpo</value>
+  </data>
+  <data name="Color.Text" xml:space="preserve">
+    <value>Cor</value>
+  </data>
+  <data name="Continue.Text" xml:space="preserve">
+    <value>CONTINUAR</value>
+  </data>
+  <data name="ControlPosition.Text" xml:space="preserve">
+    <value>Posição dos controles</value>
+  </data>
+  <data name="ControlType.Text" xml:space="preserve">
+    <value>Tipo de controle</value>
+  </data>
+  <data name="CustomizeGameView.Text" xml:space="preserve">
+    <value>Personalize a visualização do jogo e as cores</value>
+  </data>
+  <data name="Danil.Text" xml:space="preserve">
+    <value>Danil Pavlov</value>
+  </data>
+  <data name="Dark.Text" xml:space="preserve">
+    <value>escuro</value>
+  </data>
+  <data name="DarkNLight.Text" xml:space="preserve">
+    <value>Tema claro e escuro</value>
+  </data>
+  <data name="Designer.Text" xml:space="preserve">
+    <value>Designer</value>
+  </data>
+  <data name="Developer.Text" xml:space="preserve">
+    <value>Desenvolvedor</value>
+  </data>
+  <data name="Donate.Text" xml:space="preserve">
+    <value>DOAR</value>
+  </data>
+  <data name="DontPrompt.Text" xml:space="preserve">
+    <value>Não me pergunte novamente</value>
+  </data>
+  <data name="Email.Text" xml:space="preserve">
+    <value>E-MAIL</value>
+  </data>
+  <data name="EnterYourName.Text" xml:space="preserve">
+    <value>Digite seu nome</value>
+  </data>
+  <data name="GameLeaderBoard.Text" xml:space="preserve">
+    <value>Ranking do jogo</value>
+  </data>
+  <data name="GameOver.Text" xml:space="preserve">
+    <value>FIM DE JOGO</value>
+  </data>
+  <data name="Global.Text" xml:space="preserve">
+    <value>Mundial</value>
+  </data>
+  <data name="GoodOldGame" xml:space="preserve">
+    <value>O velho e bom jogo em um novo formato que pode ocupar grande parte de seu tempo. Experimente!</value>
+  </data>
+  <data name="Help.Text" xml:space="preserve">
+    <value>Ajuda</value>
+  </data>
+  <data name="High.Text" xml:space="preserve">
+    <value>alto</value>
+  </data>
+  <data name="Infinity.Text" xml:space="preserve">
+    <value>Infinito</value>
+  </data>
+  <data name="IntervalControl.Text" xml:space="preserve">
+    <value>Intervalo entre os controles:</value>
+  </data>
+  <data name="Level.Text" xml:space="preserve">
+    <value>NÍVEL</value>
+  </data>
+  <data name="Light.Text" xml:space="preserve">
+    <value>claro</value>
+  </data>
+  <data name="Local.Text" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="Medium.Text" xml:space="preserve">
+    <value>médio</value>
+  </data>
+  <data name="Middle.Text" xml:space="preserve">
+    <value>meio</value>
+  </data>
+  <data name="MoveBlockByArrow.Text" xml:space="preserve">
+    <value>Mova os blocos pelas setas, use o espaço para soltá-lo.</value>
+  </data>
+  <data name="Music.Text" xml:space="preserve">
+    <value>Música</value>
+  </data>
+  <data name="NewGame.Text" xml:space="preserve">
+    <value>NOVO JOGO</value>
+  </data>
+  <data name="NewSettingsWill.Text" xml:space="preserve">
+    <value>Novas configurações serão aplicadas após a reinicialização do jogo. O jogo será fechado automaticamente.</value>
+  </data>
+  <data name="Next.Text" xml:space="preserve">
+    <value>PRÓXIMO</value>
+  </data>
+  <data name="NoThx.Text" xml:space="preserve">
+    <value>NÃO, OBRIGADO</value>
+  </data>
+  <data name="Pause.Text" xml:space="preserve">
+    <value>Pausar</value>
+  </data>
+  <data name="PleaseRate.Text" xml:space="preserve">
+    <value>Você gosta do jogo? Deseja que ele melhore ainda mais? Por favor, nos apoie com sua avaliação.</value>
+  </data>
+  <data name="Rate.Text" xml:space="preserve">
+    <value>AVALIAR</value>
+  </data>
+  <data name="Records.Text" xml:space="preserve">
+    <value>RECORDES</value>
+  </data>
+  <data name="RemoveAds.Text" xml:space="preserve">
+    <value>Remover anúncios</value>
+  </data>
+  <data name="RestorePurchases.Text" xml:space="preserve">
+    <value>Restaurar compras</value>
+  </data>
+  <data name="Score.Text" xml:space="preserve">
+    <value>PONTUAÇÃO</value>
+  </data>
+  <data name="ServerNotAvalable.Text" xml:space="preserve">
+    <value>Servidor indisponível</value>
+  </data>
+  <data name="Settings.Text" xml:space="preserve">
+    <value>AJUSTES</value>
+  </data>
+  <data name="Shadow.Text" xml:space="preserve">
+    <value>Sombra</value>
+  </data>
+  <data name="Small.Text" xml:space="preserve">
+    <value>pequeno</value>
+  </data>
+  <data name="SoundFX.Text" xml:space="preserve">
+    <value>Efeitos sonoros</value>
+  </data>
+  <data name="StoreName" xml:space="preserve">
+    <value>Blocos+</value>
+  </data>
+  <data name="Support.Text" xml:space="preserve">
+    <value>Suporte</value>
+  </data>
+  <data name="Swipe.Text" xml:space="preserve">
+    <value>deslizar</value>
+  </data>
+  <data name="SwipeForControl.Text" xml:space="preserve">
+    <value>Para controlar o bloco, deslize</value>
+  </data>
+  <data name="TapToDrop.Text" xml:space="preserve">
+    <value>Toque na área para soltar o bloco</value>
+  </data>
+  <data name="Theme.Text" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="Time.Text" xml:space="preserve">
+    <value>TEMPO</value>
+  </data>
+  <data name="TimeAttack.Text" xml:space="preserve">
+    <value>Ataque de tempo</value>
+  </data>
+  <data name="Vibration.Text" xml:space="preserve">
+    <value>Vibração</value>
+  </data>
+  <data name="YouCanHelpUs.Text" xml:space="preserve">
+    <value>Você pode nos ajudar com a tradução do app na sua língua nativa. Contate-nos por e-mail.</value>
+  </data>
+</root>

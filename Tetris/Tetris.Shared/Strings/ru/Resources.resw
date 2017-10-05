@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About.Text" xml:space="preserve">
+    <value>ОБ ИГРЕ</value>
+  </data>
+  <data name="Anna.Text" xml:space="preserve">
+    <value>Анна Павлова</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="ApplicationName.Text" xml:space="preserve">
+    <value>ТЕТРИС+</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Тетрис+</value>
+  </data>
+  <data name="Auto.Text" xml:space="preserve">
+    <value>автоматически</value>
+  </data>
+  <data name="Back.Text" xml:space="preserve">
+    <value>НАЗАД</value>
+  </data>
+  <data name="BestScore.Text" xml:space="preserve">
+    <value>Лучший результат </value>
+  </data>
+  <data name="BestTime.Text" xml:space="preserve">
+    <value>Лучшее время </value>
+  </data>
+  <data name="Big.Text" xml:space="preserve">
+    <value>большой</value>
+  </data>
+  <data name="Bottom.Text" xml:space="preserve">
+    <value>низко</value>
+  </data>
+  <data name="Buttons.Text" xml:space="preserve">
+    <value>кнопки</value>
+  </data>
+  <data name="CheckApps.Text" xml:space="preserve">
+    <value>Попробуйте наши приложения</value>
+  </data>
+  <data name="Classic.Text" xml:space="preserve">
+    <value>Классический</value>
+  </data>
+  <data name="ClearDesign.Text" xml:space="preserve">
+    <value>Современный дизайн</value>
+  </data>
+  <data name="Color.Text" xml:space="preserve">
+    <value>Цвет</value>
+  </data>
+  <data name="Continue.Text" xml:space="preserve">
+    <value>ПРОДОЛЖИТЬ</value>
+  </data>
+  <data name="ControlPosition.Text" xml:space="preserve">
+    <value>Положение кнопок</value>
+  </data>
+  <data name="ControlType.Text" xml:space="preserve">
+    <value>Тип управления</value>
+  </data>
+  <data name="CustomizeGameView.Text" xml:space="preserve">
+    <value>Настройте вид игры, цвета фигур</value>
+  </data>
+  <data name="Danil.Text" xml:space="preserve">
+    <value>Даниил Павлов</value>
+  </data>
+  <data name="Dark.Text" xml:space="preserve">
+    <value>темная</value>
+  </data>
+  <data name="DarkNLight.Text" xml:space="preserve">
+    <value>Темная и светлая темы</value>
+  </data>
+  <data name="Designer.Text" xml:space="preserve">
+    <value>Дизайнер</value>
+  </data>
+  <data name="Developer.Text" xml:space="preserve">
+    <value>Разработчик</value>
+  </data>
+  <data name="Donate.Text" xml:space="preserve">
+    <value>ПОЖЕРТВОВАТЬ</value>
+  </data>
+  <data name="DontPrompt.Text" xml:space="preserve">
+    <value>Не предлагать больше</value>
+  </data>
+  <data name="Email.Text" xml:space="preserve">
+    <value>ПИСЬМО</value>
+  </data>
+  <data name="EnterYourName.Text" xml:space="preserve">
+    <value>Введите свое имя</value>
+  </data>
+  <data name="GameLeaderBoard.Text" xml:space="preserve">
+    <value>Таблица рекордов</value>
+  </data>
+  <data name="GameOver.Text" xml:space="preserve">
+    <value>КОНЕЦ ИГРЫ</value>
+  </data>
+  <data name="Global.Text" xml:space="preserve">
+    <value>Глобальные</value>
+  </data>
+  <data name="GoodOldGame" xml:space="preserve">
+    <value>Старая добрая игра в новой форме, которая может украсть кучу Вашего времени. Попробуйте!</value>
+  </data>
+  <data name="Help.Text" xml:space="preserve">
+    <value>Помощь</value>
+  </data>
+  <data name="High.Text" xml:space="preserve">
+    <value>высоко</value>
+  </data>
+  <data name="Infinity.Text" xml:space="preserve">
+    <value>Бесконечный</value>
+  </data>
+  <data name="IntervalControl.Text" xml:space="preserve">
+    <value>Интервал между кнопками</value>
+  </data>
+  <data name="Level.Text" xml:space="preserve">
+    <value>УРОВЕНЬ</value>
+  </data>
+  <data name="Light.Text" xml:space="preserve">
+    <value>светлая</value>
+  </data>
+  <data name="Local.Text" xml:space="preserve">
+    <value>Локальные</value>
+  </data>
+  <data name="Medium.Text" xml:space="preserve">
+    <value>средний</value>
+  </data>
+  <data name="Middle.Text" xml:space="preserve">
+    <value>посередине</value>
+  </data>
+  <data name="MoveBlockByArrow.Text" xml:space="preserve">
+    <value>Двигайте блок стрелками, используйте пробел для сброса блока вниз.</value>
+  </data>
+  <data name="Music.Text" xml:space="preserve">
+    <value>Музыка</value>
+  </data>
+  <data name="NewGame.Text" xml:space="preserve">
+    <value>НОВАЯ ИГРА</value>
+  </data>
+  <data name="NewSettingsWill.Text" xml:space="preserve">
+    <value>Новые настройки будут применены после перезагрузки приложения. Игра закроется автоматически.</value>
+  </data>
+  <data name="Next.Text" xml:space="preserve">
+    <value>ДАЛЕЕ</value>
+  </data>
+  <data name="NoThx.Text" xml:space="preserve">
+    <value>НЕТ, СПАСИБО</value>
+  </data>
+  <data name="Pause.Text" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="PleaseRate.Text" xml:space="preserve">
+    <value>Вам понравилась игра ? Желаете чтоб она стала еще лучше ? Поддержите нас своей оценкой.</value>
+  </data>
+  <data name="Rate.Text" xml:space="preserve">
+    <value>ОЦЕНИТЬ</value>
+  </data>
+  <data name="Records.Text" xml:space="preserve">
+    <value>РЕКОРДЫ</value>
+  </data>
+  <data name="RemoveAds.Text" xml:space="preserve">
+    <value>Убрать рекламу</value>
+  </data>
+  <data name="RestorePurchases.Text" xml:space="preserve">
+    <value>Восстановить покупки</value>
+  </data>
+  <data name="Score.Text" xml:space="preserve">
+    <value>ОЧКИ</value>
+  </data>
+  <data name="ServerNotAvalable.Text" xml:space="preserve">
+    <value>Сервер игры недоступен</value>
+  </data>
+  <data name="Settings.Text" xml:space="preserve">
+    <value>НАСТРОЙКИ</value>
+  </data>
+  <data name="Shadow.Text" xml:space="preserve">
+    <value>Тень</value>
+  </data>
+  <data name="Small.Text" xml:space="preserve">
+    <value>маленький</value>
+  </data>
+  <data name="SoundFX.Text" xml:space="preserve">
+    <value>Эффекты</value>
+  </data>
+  <data name="StoreName" xml:space="preserve">
+    <value>Тетрис+</value>
+  </data>
+  <data name="Support.Text" xml:space="preserve">
+    <value>Поддержка</value>
+  </data>
+  <data name="Swipe.Text" xml:space="preserve">
+    <value>жесты</value>
+  </data>
+  <data name="SwipeForControl.Text" xml:space="preserve">
+    <value>Для управления блоком используйте жесты</value>
+  </data>
+  <data name="TapToDrop.Text" xml:space="preserve">
+    <value>Нажмите в нижней зоне для сброса фигуры вниз</value>
+  </data>
+  <data name="Theme.Text" xml:space="preserve">
+    <value>Тема</value>
+  </data>
+  <data name="Time.Text" xml:space="preserve">
+    <value>ВРЕМЯ</value>
+  </data>
+  <data name="TimeAttack.Text" xml:space="preserve">
+    <value>На время</value>
+  </data>
+  <data name="Vibration.Text" xml:space="preserve">
+    <value>Вибрация</value>
+  </data>
+  <data name="YouCanHelpUs.Text" xml:space="preserve">
+    <value>Вы можете помочь нам с переводом игры на ваш родной язык. Напишите пожалуйста нам на почту.</value>
+  </data>
+</root>

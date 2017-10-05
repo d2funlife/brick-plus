@@ -1,0 +1,19 @@
+﻿<UserControl
+    x:Class="Tetris.Controls.SVG.GameRotate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tetris.Controls.SVG"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+        <Canvas Name="Layer_1" Canvas.Left="0" Canvas.Top="0" Width="58.5" Height="56.6">
+            <Canvas.RenderTransform>
+                <TranslateTransform X="210" Y="-372.4"/>
+            </Canvas.RenderTransform>
+            <Path Fill="{StaticResource ForegroundColor}" Data="M-155.9 400.7h-7.7h-2.2h-7.5c-2.4 0-4.4-1.8-4.4-4.2l5.8-5.8c-2.5-2.7-6-4.4-9.8-4.4   c-7.7 0-14.9 6.2-14.9 14.4c0 8.7 6 15.4 14.9 15.4c6 0 11-3 13.8-7.6l0.1-0.2c1.3-2.4 3.1-3.4 5.6-3.4c3.3 0 6 2.7 6 6   c0 1.1-0.1 2-0.6 3.1l0 0c-4.8 8.9-14.2 15-25 15c-15.6 0-28.3-12.7-28.3-28.3c0-15.6 12.7-28.3 28.3-28.3c7.7 0 14.8 3.1 19.9 8.2   l6-6c2.4 0 4.4 2 4.4 4.4v17.4c0 2.5-1.9 3.7-1.9 3.7C-154.5 400.7-155.9 400.7-155.9 400.7z M-194.5 422.7L-194.5 422.7    M-194.5 422.7c0 0 4.6 3.4 12.8 3.4c1.7 0 5.8-0.5 8.4-1.5c2.6-0.9 5.6-2.6 5.6-2.6c2.2-1.4 4.1-3.1 5.8-5.1   c0.1-0.1 0.1-0.1 0.2-0.2l0 0c0.9-1.1 1.8-2.2 2.5-3.5l0.1-0.2c0.5-1 0.6-1.4 0.6-2.4c0-2.1-1.7-3.8-3.8-3.8c-1.6 0-2.5 0.7-3.3 2   c-6.7 12.9-20.9 9-20.9 9c-1.5-0.4-2.9-1-4.1-1.7l0 0c-5.4-3.1-9.1-9-9.1-15.7s3.7-12.6 9.1-15.7l0 0c1.3-0.7 2.7-1.3 4.1-1.7   c0 0 7.6-2.1 14.4 1.9c0 0 2.8 1.8 5.6 5.4l-3.5 3.5c0 1.3 1.1 2.4 2.4 2.4h9.8c1.3 0 2.4-1.1 2.4-2.4v-9.4l0 0   c0-1.3-1.2-2.4-2.6-2.4l-4.1 4.1c-0.7-1-1.3-1.5-2.2-2.4l-0.3-0.3c-4.4-4.5-10.4-7.4-17-7.4c-13.3 0-24.7 11.3-25.1 24.6   C-207.2 415.1-194.5 422.7-194.5 422.7z"/>
+        </Canvas>
+    </Viewbox>
+</UserControl>

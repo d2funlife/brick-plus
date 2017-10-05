@@ -1,0 +1,140 @@
+﻿<UserControl
+    x:Class="Tetris.Controls.GameResultMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tetris.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:svg="using:Tetris.Controls.SVG"
+    mc:Ignorable="d"
+    d:DesignHeight="800"
+    d:DesignWidth="480">
+    <Grid x:Name="GameResultRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <TextBlock x:Uid="Time"
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           Style="{StaticResource GameResultLable}"
+                   Foreground="{StaticResource ForegroundColor}"
+                           Text="TIME" />
+        <TextBlock Grid.Row="3"
+                           Grid.Column="1"
+                           Style="{StaticResource GameResultText}"
+                           Text="{Binding Time,
+                                          FallbackValue='00:00:00',
+                                          Mode=OneWay}" />
+        <Grid Grid.Row="5" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="1" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="2.3*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+                <TextBlock x:Uid="Level"
+                                   Grid.Row="1"
+                                   Style="{StaticResource GameResultLable}"
+                           Foreground="{StaticResource ForegroundColor}"
+                                   Text="LEVEL" />
+                <TextBlock Grid.Row="3"
+                                   Style="{StaticResource GameResultText}"
+                                   Text="{Binding Level,
+                                                  FallbackValue='00',
+                                                  Mode=OneWay}" />
+            </Grid>
+            <Grid Grid.Column="1" Background="{StaticResource ForegroundColor}" />
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="2.3*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+                <TextBlock x:Uid="Score" Grid.Row="1" Style="{StaticResource GameResultLable}" Foreground="{StaticResource ForegroundColor}" Text="SCORE" />
+                <TextBlock Grid.Row="3" Style="{StaticResource GameResultText}" Text="{Binding Score, FallbackValue='0000',Mode=OneWay}" />
+            </Grid>
+        </Grid>
+        <TextBox x:Uid="NickName" x:Name="Nick" Grid.Row="7" Grid.Column="1" Style="{StaticResource NicknameInput}" Text="{Binding PlayerName, Mode=TwoWay}" Foreground="{StaticResource ForegroundColor}" x:FieldModifier="public">
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="LostFocus">
+                    <core:InvokeCommandAction Command="{Binding NickNameChangedCommand, Mode=OneTime}" />
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+        </TextBox>
+        <Grid Grid.Row="9" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="7*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Background="Transparent">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="PointerEntered">
+                        <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}" />
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerExited">
+                        <core:ChangePropertyAction PropertyName="Background">
+                            <core:ChangePropertyAction.Value>
+                                <SolidColorBrush Color="Transparent" />
+                            </core:ChangePropertyAction.Value>
+                        </core:ChangePropertyAction>
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerPressed">
+                        <core:InvokeCommandAction Command="{Binding HideGameResultCommand, Mode=OneTime}" />
+                        <core:InvokeCommandAction Command="{Binding ShowRecordsCommand, Mode=OneTime}" />
+                        <core:InvokeCommandAction Command="{Binding ShowPauseMenuCommand, Mode=OneTime}" />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+                <Border Style="{StaticResource ButtonBorder}" />
+                <svg:Rate Margin="8"/>
+            </Grid>
+            <Grid Grid.Column="3" Background="Transparent">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="PointerEntered">
+                        <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}" />
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerExited">
+                        <core:ChangePropertyAction PropertyName="Background">
+                            <core:ChangePropertyAction.Value>
+                                <SolidColorBrush Color="Transparent" />
+                            </core:ChangePropertyAction.Value>
+                        </core:ChangePropertyAction>
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerPressed">
+                        <core:InvokeCommandAction Command="{Binding ChooseModeCommand, Mode=OneTime}" />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+                <Border Style="{StaticResource ButtonBorder}" />
+                <svg:Play Margin="8"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

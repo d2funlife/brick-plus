@@ -1,0 +1,23 @@
+﻿<UserControl
+    x:Class="Tetris.Controls.SVG.PauseWithArrow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tetris.Controls.SVG"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    <Viewbox Stretch="Uniform">
+        <Canvas Width="33.9" Height="70.6">
+            <Canvas.RenderTransform>
+                <TranslateTransform X="0" Y="0"/>
+            </Canvas.RenderTransform>
+            <Path Fill="#ffffff" Data="M31.3 70.6H21c-1.4 0-2.6-1.1-2.6-2.6V39.8c0-1.4 1.1-2.6 2.6-2.6h10.3c1.4 0 2.6 1.2 2.6 2.6  V68C33.9 69.4 32.7 70.6 31.3 70.6L31.3 70.6z M31.3 41.1c0-0.7-0.6-1.3-1.3-1.3h-7.7c-0.7 0-1.3 0.6-1.3 1.3v25.7  c0 0.7 0.6 1.3 1.3 1.3H30c0.7 0 1.3-0.6 1.3-1.3V41.1L31.3 41.1z M13.3 70.6H3.1c-1.4 0-2.6-1.1-2.6-2.6V39.8  c0-1.4 1.2-2.6 2.6-2.6h10.3c1.4 0 2.6 1.2 2.6 2.6V68C15.9 69.4 14.8 70.6 13.3 70.6L13.3 70.6z M13.3 41.1c0-0.7-0.6-1.3-1.3-1.3  H4.3c-0.7 0-1.3 0.6-1.3 1.3v25.7c0 0.7 0.6 1.3 1.3 1.3H12c0.7 0 1.3-0.6 1.3-1.3V41.1L13.3 41.1z"/>
+            <Canvas Name="XMLID_804_">
+                <Polygon Points="16.8,32.8 11.9,27.6 13.9,25.7 16.7,28.7 19.3,25.6 21.4,27.4  " FillRule="NonZero" Fill="#ffffff"/>
+                <Path Fill="#ffffff" Data="M15.4 30.7C14.8 7.9 0.2 2.7 0 2.6L0.9 0c0.7 0.2 16.6 5.9 17.2 30.6L15.4 30.7z"/>
+            </Canvas>
+        </Canvas>
+    </Viewbox>
+</UserControl>

@@ -1,0 +1,318 @@
+﻿<UserControl
+    x:Class="Tetris.Controls.SVG.MainLogo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tetris.Controls.SVG"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+        <Canvas Name="Layer_1" Canvas.Left="0" Canvas.Top="0" Width="103.5" Height="207.5">
+            <Canvas.RenderTransform>
+                <TranslateTransform X="0" Y="0"/>
+            </Canvas.RenderTransform>
+            <Canvas.Resources/>
+            <Rectangle Canvas.Top="201.5" Width="6" Height="6" Name="rect5" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="201.5" Width="6" Height="6" Name="rect7" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="201.5" Width="6" Height="6" Name="rect9" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="19.5" Canvas.Top="201.5" Width="6" Height="6" Name="rect11" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="26" Canvas.Top="201.5" Width="6" Height="6" Name="rect13" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="32.5" Canvas.Top="201.5" Width="6" Height="6" Name="rect15" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="39" Canvas.Top="201.5" Width="6" Height="6" Name="rect17" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="45.5" Canvas.Top="201.5" Width="6" Height="6" Name="rect19" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="52" Canvas.Top="201.5" Width="6" Height="6" Name="rect21" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="58.5" Canvas.Top="201.5" Width="6" Height="6" Name="rect23" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="65" Canvas.Top="201.5" Width="6" Height="6" Name="rect25" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="71.5" Canvas.Top="201.5" Width="6" Height="6" Name="rect27" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="78" Canvas.Top="201.5" Width="6" Height="6" Name="rect29" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="201.5" Width="6" Height="6" Name="rect31" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="201.5" Width="6" Height="6" Name="rect33" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="201.5" Width="6" Height="6" Name="rect35" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="195" Width="6" Height="6" Name="rect37" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="195" Width="6" Height="6" Name="rect39" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="195" Width="6" Height="6" Name="rect41" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="19.5" Canvas.Top="195" Width="6" Height="6" Name="rect43" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="26" Canvas.Top="195" Width="6" Height="6" Name="rect45" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="32.5" Canvas.Top="195" Width="6" Height="6" Name="rect47" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="39" Canvas.Top="195" Width="6" Height="6" Name="rect49" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="45.5" Canvas.Top="195" Width="6" Height="6" Name="rect51" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="52" Canvas.Top="195" Width="6" Height="6" Name="rect53" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="58.5" Canvas.Top="195" Width="6" Height="6" Name="rect55" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="65" Canvas.Top="195" Width="6" Height="6" Name="rect57" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="71.5" Canvas.Top="195" Width="6" Height="6" Name="rect59" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="78" Canvas.Top="195" Width="6" Height="6" Name="rect61" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="195" Width="6" Height="6" Name="rect63" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="195" Width="6" Height="6" Name="rect65" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="195" Width="6" Height="6" Name="rect67" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="188.5" Width="6" Height="6" Name="rect69" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="188.5" Width="6" Height="6" Name="rect71" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="188.5" Width="6" Height="6" Name="rect73" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="19.5" Canvas.Top="188.5" Width="6" Height="6" Name="rect75" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="26" Canvas.Top="188.5" Width="6" Height="6" Name="rect77" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="32.5" Canvas.Top="188.5" Width="6" Height="6" Name="rect79" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="39" Canvas.Top="188.5" Width="6" Height="6" Name="rect81" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="45.5" Canvas.Top="188.5" Width="6" Height="6" Name="rect83" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="52" Canvas.Top="188.5" Width="6" Height="6" Name="rect85" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="58.5" Canvas.Top="188.5" Width="6" Height="6" Name="rect87" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="65" Canvas.Top="188.5" Width="6" Height="6" Name="rect89" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="71.5" Canvas.Top="188.5" Width="6" Height="6" Name="rect91" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="78" Canvas.Top="188.5" Width="6" Height="6" Name="rect93" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="188.5" Width="6" Height="6" Name="rect95" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="188.5" Width="6" Height="6" Name="rect97" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="188.5" Width="6" Height="6" Name="rect99" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="182" Width="6" Height="6" Name="rect101" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="182" Width="6" Height="6" Name="rect103" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="182" Width="6" Height="6" Name="rect105" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="19.5" Canvas.Top="182" Width="6" Height="6" Name="rect107" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="39" Canvas.Top="182" Width="6" Height="6" Name="rect109" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="45.5" Canvas.Top="182" Width="6" Height="6" Name="rect111" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="52" Canvas.Top="182" Width="6" Height="6" Name="rect113" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="58.5" Canvas.Top="182" Width="6" Height="6" Name="rect115" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="65" Canvas.Top="182" Width="6" Height="6" Name="rect117" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="71.5" Canvas.Top="182" Width="6" Height="6" Name="rect119" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="78" Canvas.Top="182" Width="6" Height="6" Name="rect121" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="182" Width="6" Height="6" Name="rect123" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="182" Width="6" Height="6" Name="rect125" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="182" Width="6" Height="6" Name="rect127" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="175.5" Width="6" Height="6" Name="rect129" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="175.5" Width="6" Height="6" Name="rect131" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="175.5" Width="6" Height="6" Name="rect133" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="19.5" Canvas.Top="175.5" Width="6" Height="6" Name="rect135" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="39" Canvas.Top="175.5" Width="6" Height="6" Name="rect137" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="45.5" Canvas.Top="175.5" Width="6" Height="6" Name="rect139" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="52" Canvas.Top="175.5" Width="6" Height="6" Name="rect141" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="58.5" Canvas.Top="175.5" Width="6" Height="6" Name="rect143" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="65" Canvas.Top="175.5" Width="6" Height="6" Name="rect145" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="71.5" Canvas.Top="175.5" Width="6" Height="6" Name="rect147" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="78" Canvas.Top="175.5" Width="6" Height="6" Name="rect149" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="175.5" Width="6" Height="6" Name="rect151" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="175.5" Width="6" Height="6" Name="rect153" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="175.5" Width="6" Height="6" Name="rect155" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="169" Width="6" Height="6" Name="rect157" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="169" Width="6" Height="6" Name="rect159" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="52" Canvas.Top="169" Width="6" Height="6" Name="rect161" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="58.5" Canvas.Top="169" Width="6" Height="6" Name="rect163" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="65" Canvas.Top="169" Width="6" Height="6" Name="rect165" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="71.5" Canvas.Top="169" Width="6" Height="6" Name="rect167" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="169" Width="6" Height="6" Name="rect169" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="169" Width="6" Height="6" Name="rect171" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="162.5" Width="6" Height="6" Name="rect173" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="162.5" Width="6" Height="6" Name="rect175" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="52" Canvas.Top="162.5" Width="6" Height="6" Name="rect177" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="58.5" Canvas.Top="162.5" Width="6" Height="6" Name="rect179" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="65" Canvas.Top="162.5" Width="6" Height="6" Name="rect181" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="71.5" Canvas.Top="162.5" Width="6" Height="6" Name="rect183" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="162.5" Width="6" Height="6" Name="rect185" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="162.5" Width="6" Height="6" Name="rect187" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="156" Width="6" Height="6" Name="rect189" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="156" Width="6" Height="6" Name="rect191" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="156" Width="6" Height="6" Name="rect193" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="19.5" Canvas.Top="156" Width="6" Height="6" Name="rect195" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="39" Canvas.Top="156" Width="6" Height="6" Name="rect197" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="45.5" Canvas.Top="156" Width="6" Height="6" Name="rect199" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="52" Canvas.Top="156" Width="6" Height="6" Name="rect201" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="58.5" Canvas.Top="156" Width="6" Height="6" Name="rect203" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="65" Canvas.Top="156" Width="6" Height="6" Name="rect205" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="71.5" Canvas.Top="156" Width="6" Height="6" Name="rect207" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="78" Canvas.Top="156" Width="6" Height="6" Name="rect209" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="156" Width="6" Height="6" Name="rect211" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="156" Width="6" Height="6" Name="rect213" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="156" Width="6" Height="6" Name="rect215" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="149.5" Width="6" Height="6" Name="rect217" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="149.5" Width="6" Height="6" Name="rect219" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="149.5" Width="6" Height="6" Name="rect221" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="19.5" Canvas.Top="149.5" Width="6" Height="6" Name="rect223" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="39" Canvas.Top="149.5" Width="6" Height="6" Name="rect225" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="45.5" Canvas.Top="149.5" Width="6" Height="6" Name="rect227" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="52" Canvas.Top="149.5" Width="6" Height="6" Name="rect229" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="58.5" Canvas.Top="149.5" Width="6" Height="6" Name="rect231" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="65" Canvas.Top="149.5" Width="6" Height="6" Name="rect233" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="71.5" Canvas.Top="149.5" Width="6" Height="6" Name="rect235" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="78" Canvas.Top="149.5" Width="6" Height="6" Name="rect237" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="149.5" Width="6" Height="6" Name="rect239" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="149.5" Width="6" Height="6" Name="rect241" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="149.5" Width="6" Height="6" Name="rect243" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="143" Width="6" Height="6" Name="rect245" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="143" Width="6" Height="6" Name="rect247" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="143" Width="6" Height="6" Name="rect249" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="19.5" Canvas.Top="143" Width="6" Height="6" Name="rect251" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="26" Canvas.Top="143" Width="6" Height="6" Name="rect253" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="32.5" Canvas.Top="143" Width="6" Height="6" Name="rect255" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="39" Canvas.Top="143" Width="6" Height="6" Name="rect257" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="45.5" Canvas.Top="143" Width="6" Height="6" Name="rect259" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="52" Canvas.Top="143" Width="6" Height="6" Name="rect261" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="58.5" Canvas.Top="143" Width="6" Height="6" Name="rect263" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="65" Canvas.Top="143" Width="6" Height="6" Name="rect265" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="71.5" Canvas.Top="143" Width="6" Height="6" Name="rect267" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="78" Canvas.Top="143" Width="6" Height="6" Name="rect269" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="143" Width="6" Height="6" Name="rect271" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="143" Width="6" Height="6" Name="rect273" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="143" Width="6" Height="6" Name="rect275" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="136.5" Width="6" Height="6" Name="rect277" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="136.5" Width="6" Height="6" Name="rect279" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="136.5" Width="6" Height="6" Name="rect281" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="19.5" Canvas.Top="136.5" Width="6" Height="6" Name="rect283" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="26" Canvas.Top="136.5" Width="6" Height="6" Name="rect285" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="32.5" Canvas.Top="136.5" Width="6" Height="6" Name="rect287" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="39" Canvas.Top="136.5" Width="6" Height="6" Name="rect289" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="45.5" Canvas.Top="136.5" Width="6" Height="6" Name="rect291" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="52" Canvas.Top="136.5" Width="6" Height="6" Name="rect293" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="58.5" Canvas.Top="136.5" Width="6" Height="6" Name="rect295" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="65" Canvas.Top="136.5" Width="6" Height="6" Name="rect297" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="71.5" Canvas.Top="136.5" Width="6" Height="6" Name="rect299" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="78" Canvas.Top="136.5" Width="6" Height="6" Name="rect301" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="136.5" Width="6" Height="6" Name="rect303" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="136.5" Width="6" Height="6" Name="rect305" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="136.5" Width="6" Height="6" Name="rect307" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="130" Width="6" Height="6" Name="rect309" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="130" Width="6" Height="6" Name="rect311" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="130" Width="6" Height="6" Name="rect313" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="26" Canvas.Top="130" Width="6" Height="6" Name="rect315" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="32.5" Canvas.Top="130" Width="6" Height="6" Name="rect317" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="45.5" Canvas.Top="130" Width="6" Height="6" Name="rect319" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="52" Canvas.Top="130" Width="6" Height="6" Name="rect321" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="65" Canvas.Top="130" Width="6" Height="6" Name="rect323" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="71.5" Canvas.Top="130" Width="6" Height="6" Name="rect325" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="130" Width="6" Height="6" Name="rect327" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="130" Width="6" Height="6" Name="rect329" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="130" Width="6" Height="6" Name="rect331" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="123.5" Width="6" Height="6" Name="rect333" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="123.5" Width="6" Height="6" Name="rect335" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="123.5" Width="6" Height="6" Name="rect337" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="19.5" Canvas.Top="123.5" Width="6" Height="6" Name="rect339" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="26" Canvas.Top="123.5" Width="6" Height="6" Name="rect341" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="32.5" Canvas.Top="123.5" Width="6" Height="6" Name="rect343" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="39" Canvas.Top="123.5" Width="6" Height="6" Name="rect345" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="45.5" Canvas.Top="123.5" Width="6" Height="6" Name="rect347" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="52" Canvas.Top="123.5" Width="6" Height="6" Name="rect349" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="58.5" Canvas.Top="123.5" Width="6" Height="6" Name="rect351" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="65" Canvas.Top="123.5" Width="6" Height="6" Name="rect353" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="71.5" Canvas.Top="123.5" Width="6" Height="6" Name="rect355" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="78" Canvas.Top="123.5" Width="6" Height="6" Name="rect357" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="123.5" Width="6" Height="6" Name="rect359" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="123.5" Width="6" Height="6" Name="rect361" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="123.5" Width="6" Height="6" Name="rect363" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="117" Width="6" Height="6" Name="rect365" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="117" Width="6" Height="6" Name="rect367" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="117" Width="6" Height="6" Name="rect369" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="117" Width="6" Height="6" Name="rect371" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="117" Width="6" Height="6" Name="rect373" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="117" Width="6" Height="6" Name="rect375" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="110.5" Width="6" Height="6" Name="rect377" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="110.5" Width="6" Height="6" Name="rect379" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="110.5" Width="6" Height="6" Name="rect381" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="110.5" Width="6" Height="6" Name="rect383" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="110.5" Width="6" Height="6" Name="rect385" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="110.5" Width="6" Height="6" Name="rect387" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="104" Width="6" Height="6" Name="rect389" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="104" Width="6" Height="6" Name="rect391" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="104" Width="6" Height="6" Name="rect393" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="104" Width="6" Height="6" Name="rect395" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="104" Width="6" Height="6" Name="rect397" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="104" Width="6" Height="6" Name="rect399" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="97.5" Width="6" Height="6" Name="rect401" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="97.5" Width="6" Height="6" Name="rect403" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="97.5" Width="6" Height="6" Name="rect405" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="97.5" Width="6" Height="6" Name="rect407" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="97.5" Width="6" Height="6" Name="rect409" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="97.5" Width="6" Height="6" Name="rect411" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="91" Width="6" Height="6" Name="rect413" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="91" Width="6" Height="6" Name="rect415" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="91" Width="6" Height="6" Name="rect417" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="91" Width="6" Height="6" Name="rect419" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="91" Width="6" Height="6" Name="rect421" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="91" Width="6" Height="6" Name="rect423" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="84.5" Width="6" Height="6" Name="rect425" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="84.5" Width="6" Height="6" Name="rect427" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="84.5" Width="6" Height="6" Name="rect429" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="84.5" Width="6" Height="6" Name="rect431" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="84.5" Width="6" Height="6" Name="rect433" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="84.5" Width="6" Height="6" Name="rect435" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="78" Width="6" Height="6" Name="rect437" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="78" Width="6" Height="6" Name="rect439" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="78" Width="6" Height="6" Name="rect441" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="78" Width="6" Height="6" Name="rect443" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="78" Width="6" Height="6" Name="rect445" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="78" Width="6" Height="6" Name="rect447" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="71.5" Width="6" Height="6" Name="rect449" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="71.5" Width="6" Height="6" Name="rect451" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="71.5" Width="6" Height="6" Name="rect453" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="71.5" Width="6" Height="6" Name="rect455" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="71.5" Width="6" Height="6" Name="rect457" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="71.5" Width="6" Height="6" Name="rect459" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="65" Width="6" Height="6" Name="rect461" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="65" Width="6" Height="6" Name="rect463" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="65" Width="6" Height="6" Name="rect465" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="65" Width="6" Height="6" Name="rect467" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="65" Width="6" Height="6" Name="rect469" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="65" Width="6" Height="6" Name="rect471" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="58.5" Width="6" Height="6" Name="rect473" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="58.5" Width="6" Height="6" Name="rect475" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="58.5" Width="6" Height="6" Name="rect477" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="58.5" Width="6" Height="6" Name="rect479" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="58.5" Width="6" Height="6" Name="rect481" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="58.5" Width="6" Height="6" Name="rect483" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="52" Width="6" Height="6" Name="rect485" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="52" Width="6" Height="6" Name="rect487" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="52" Width="6" Height="6" Name="rect489" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="52" Width="6" Height="6" Name="rect491" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="52" Width="6" Height="6" Name="rect493" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="52" Width="6" Height="6" Name="rect495" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="45.5" Width="6" Height="6" Name="rect497" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="45.5" Width="6" Height="6" Name="rect499" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="45.5" Width="6" Height="6" Name="rect501" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="19.5" Canvas.Top="45.5" Width="6" Height="6" Name="rect503" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="26" Canvas.Top="45.5" Width="6" Height="6" Name="rect505" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="32.5" Canvas.Top="45.5" Width="6" Height="6" Name="rect507" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="39" Canvas.Top="45.5" Width="6" Height="6" Name="rect509" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="45.5" Canvas.Top="45.5" Width="6" Height="6" Name="rect511" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="52" Canvas.Top="45.5" Width="6" Height="6" Name="rect513" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="58.5" Canvas.Top="45.5" Width="6" Height="6" Name="rect515" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="65" Canvas.Top="45.5" Width="6" Height="6" Name="rect517" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="71.5" Canvas.Top="45.5" Width="6" Height="6" Name="rect519" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="78" Canvas.Top="45.5" Width="6" Height="6" Name="rect521" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="45.5" Width="6" Height="6" Name="rect523" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="45.5" Width="6" Height="6" Name="rect525" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="45.5" Width="6" Height="6" Name="rect527" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="39" Width="6" Height="6" Name="rect529" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="39" Width="6" Height="6" Name="rect531" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="19.5" Canvas.Top="39" Width="6" Height="6" Name="rect533" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="26" Canvas.Top="39" Width="6" Height="6" Name="rect535" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="32.5" Canvas.Top="39" Width="6" Height="6" Name="rect537" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="39" Canvas.Top="39" Width="6" Height="6" Name="rect539" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="45.5" Canvas.Top="39" Width="6" Height="6" Name="rect541" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="52" Canvas.Top="39" Width="6" Height="6" Name="rect543" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="71.5" Canvas.Top="39" Width="6" Height="6" Name="rect545" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="78" Canvas.Top="39" Width="6" Height="6" Name="rect547" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="84.5" Canvas.Top="39" Width="6" Height="6" Name="rect549" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="39" Width="6" Height="6" Name="rect551" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="39" Width="6" Height="6" Name="rect553" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="32.5" Width="6" Height="6" Name="rect555" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="26" Canvas.Top="32.5" Width="6" Height="6" Name="rect557" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="52" Canvas.Top="32.5" Width="6" Height="6" Name="rect559" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="58.5" Canvas.Top="32.5" Width="6" Height="6" Name="rect561" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="71.5" Canvas.Top="32.5" Width="6" Height="6" Name="rect563" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="78" Canvas.Top="32.5" Width="6" Height="6" Name="rect565" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="26" Width="6" Height="6" Name="rect567" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="13" Canvas.Top="26" Width="6" Height="6" Name="rect569" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="39" Canvas.Top="26" Width="6" Height="6" Name="rect571" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="78" Canvas.Top="26" Width="6" Height="6" Name="rect573" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Top="19.5" Width="6" Height="6" Name="rect575" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="19.5" Width="6" Height="6" Name="rect577" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="39" Canvas.Top="19.5" Width="6" Height="6" Name="rect579" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="45.5" Canvas.Top="19.5" Width="6" Height="6" Name="rect581" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="91" Canvas.Top="19.5" Width="6" Height="6" Name="rect583" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="19.5" Width="6" Height="6" Name="rect585" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="6.5" Canvas.Top="13" Width="6" Height="6" Name="rect587" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="39" Canvas.Top="13" Width="6" Height="6" Name="rect589" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="13" Width="6" Height="6" Name="rect591" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="58.5" Canvas.Top="6.5" Width="6" Height="6" Name="rect593" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="65" Canvas.Top="6.5" Width="6" Height="6" Name="rect595" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="97.5" Canvas.Top="6.5" Width="6" Height="6" Name="rect597" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="58.5" Width="6" Height="6" Name="rect599" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+            <Rectangle Canvas.Left="65" Width="6" Height="6" Name="rect601" Fill="{ThemeResource SystemColorControlAccentBrush}"/>
+        </Canvas>
+    </Viewbox>
+</UserControl>

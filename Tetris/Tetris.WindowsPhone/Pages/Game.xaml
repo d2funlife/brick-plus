@@ -1,0 +1,235 @@
+﻿<Page x:Class="Tetris.Pages.Game"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:controls="using:Tetris.Controls"
+      xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:helpers="using:Tetris.Helpers"
+      xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:svg="using:Tetris.Controls.SVG"
+      x:Name="Page"
+      Background="{StaticResource BackgroundColor}"
+      mc:Ignorable="d">
+    <Page.Resources>
+        <helpers:ActualSizePropertyProxy x:Name="MenuSizeProxy" Element="{Binding ElementName=MenuWidth, Mode=TwoWay}" />
+    </Page.Resources>
+    <Grid x:Name="PageRoot">
+        <Grid x:Name="MenuBlueprint">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="MenuWidth" Grid.Column="1" />
+        </Grid>
+        <Grid x:Name="GameGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="17*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="11*" />
+                    <ColumnDefinition Width="2.3" />
+                    <ColumnDefinition Width="13*" />
+                    <ColumnDefinition Width="2.3" />
+                    <ColumnDefinition Width="13*" />
+                    <ColumnDefinition Width="2.3" />
+                    <ColumnDefinition Width="19*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1" Style="{StaticResource SeparateLines}" />
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition Height="2*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Uid="Level"
+                               Grid.Row="1"
+                               Style="{StaticResource TopBarLable}"
+                               Foreground="{StaticResource ForegroundColor}"
+                               Text="LEVEL" />
+                    <TextBlock Grid.Row="2"
+                               Style="{StaticResource TopBarValue}"
+                               Text="{Binding Level, Mode=OneWay}" />
+                </Grid>
+                <Grid Grid.Column="3" Style="{StaticResource SeparateLines}" />
+                <Grid Grid.Column="4">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition Height="2*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Uid="Score"
+                               Grid.Row="1"
+                               Style="{StaticResource TopBarLable}"
+                               Foreground="{StaticResource ForegroundColor}"
+                               Text="SCORE" />
+                    <TextBlock Grid.Row="2"
+                               Style="{StaticResource TopBarValue}"
+                               Text="{Binding Score,
+                                              FallbackValue='0000',
+                                              Mode=OneWay}" />
+                </Grid>
+                <Grid Grid.Column="5" Style="{StaticResource SeparateLines}" />
+                <Grid Grid.Column="6">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition Height="2*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Uid="Next"
+                               Grid.Row="1"
+                               Style="{StaticResource TopBarLable}"
+                               Foreground="{StaticResource ForegroundColor}"
+                               Text="NEXT" />
+                    <Canvas x:Name="NextBoardCanvas"
+                            Grid.Row="2"
+                            Margin="11,0,0,0" />
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1" x:Name="TimerGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Background="Transparent" Grid.Column="1">
+                        <svg:Help HorizontalAlignment="Right" Margin="5"/>
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                <core:InvokeCommandAction Command="{Binding SwitchHelpCommand, Mode=OneTime}" />
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                    </Grid>
+                    <TextBlock Grid.Column="2"
+                               Style="{StaticResource TimeValue}"
+                               Foreground="{StaticResource ForegroundColor}"
+                               Text="{Binding Time, FallbackValue='00:00', Mode=OneWay}" 
+                               Margin="12,0,12,0"/>
+                    <Grid Background="Transparent" Grid.Column="3">
+                        <svg:Pause HorizontalAlignment="Left" Margin="6"/>
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                <core:InvokeCommandAction Command="{Binding BackPressCommand, Mode=OneTime}" />
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid x:Name="MainBoardGrid" Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="7*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Visibility="{Binding ControlType, Converter={StaticResource ControlTypeToVisibility},FallbackValue=Hidden, ConverterParameter=Buttons, Mode=OneWay}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8*" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="{Binding MiddleControlMargin, Mode=OneWay}" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="{Binding BottomControlMargin, Mode=OneWay}" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1" Background="Transparent">
+                        <svg:GameLeftArrow Margin="15"/>
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                <core:InvokeCommandAction Command="{Binding MoveToLeftCommand, Mode=OneTime}" />
+                            </core:EventTriggerBehavior>
+                            <core:EventTriggerBehavior EventName="PointerReleased">
+                                <core:InvokeCommandAction Command="{Binding PointerReleasedCommand, Mode=OneTime}" />
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                    </Grid>
+                    <Grid Grid.Row="3" Background="Transparent">
+                        <svg:GameDownArrow Margin="10"/>
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                <core:InvokeCommandAction Command="{Binding MoveToDownCommand, Mode=OneTime}" />
+                            </core:EventTriggerBehavior>
+                            <core:EventTriggerBehavior EventName="PointerReleased">
+                                <core:InvokeCommandAction Command="{Binding PointerReleasedCommand, Mode=OneTime}" />
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Canvas x:Name="MainBoardCanvas" />
+                </Grid>
+                <Grid Grid.Column="1" x:Name="BottomLayer">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="9*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1" x:Name="MainBoardBottom" Background="Transparent"/>
+                </Grid>
+                <Grid Grid.Column="2" Visibility="{Binding ControlType, Converter={StaticResource ControlTypeToVisibility},FallbackValue=Hidden, ConverterParameter=Buttons, Mode=OneWay}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8*" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="{Binding MiddleControlMargin, Mode=OneWay}" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="{Binding BottomControlMargin, Mode=OneWay}" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1" Background="Transparent">
+                        <svg:GameRightArrow Margin="15"/>
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                <core:InvokeCommandAction Command="{Binding MoveToRightCommand, Mode=OneTime}" />
+                            </core:EventTriggerBehavior>
+                            <core:EventTriggerBehavior EventName="PointerReleased">
+                                <core:InvokeCommandAction Command="{Binding PointerReleasedCommand, Mode=OneTime}" />
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                    </Grid>
+                    <Grid Grid.Row="3" Background="Transparent">
+                        <svg:GameRotate Margin="10"/>
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                <core:InvokeCommandAction Command="{Binding RotateCommand, Mode=OneTime}" />
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        <controls:Overlay x:Name="MainMenu" IsAvailable="{Binding IsMenuAvailable, Mode=OneWay}" Background="{StaticResource BackgroundColor}">
+            <controls:MainMenu Height="{Binding ActualHeight, ElementName=MainMenu, Mode=OneTime}"/>
+        </controls:Overlay>
+        <controls:Overlay x:Name="ModeMenu" IsAvailable="{Binding IsChooseModeAvailable, Mode=OneWay}" Visibility="Collapsed" Background="{StaticResource BackgroundColor}">
+            <controls:ModeMenu Height="{Binding ActualHeight, ElementName=ModeMenu, Mode=OneTime}"/>
+        </controls:Overlay>
+        <controls:Overlay x:Name="SettingsOverlay" IsAvailable="{Binding IsSettingsAvailable, Mode=OneWay}" Visibility="Collapsed" Background="{StaticResource BackgroundColor}">
+            <controls:SettingsMenu Height="{Binding ActualHeight, ElementName=SettingsOverlay}"/>
+        </controls:Overlay>
+        <controls:Overlay x:Name="RecordsOverlay" IsAvailable="{Binding IsRecordsAvailable, Mode=OneWay}" Visibility="Collapsed" Background="{StaticResource BackgroundColor}">
+            <controls:RecordsMenu Height="{Binding ActualHeight, ElementName=RecordsOverlay}"/>
+        </controls:Overlay>
+        <controls:Overlay x:Name="GameResultOverlay" IsAvailable="{Binding IsGameResultAvailable, Mode=OneWay}" Visibility="Collapsed" Background="{StaticResource BackgroundColor}">
+            <controls:GameResultMenu x:Name="GameResult" Height="{Binding ActualHeight, ElementName=GameResultOverlay}"/>
+        </controls:Overlay>
+        <controls:Overlay x:Name="AboutOverlay" IsAvailable="{Binding IsAboutAvailable,Mode=OneWay}" Visibility="Collapsed" Background="{StaticResource BackgroundColor}">
+            <controls:AboutMenu Height="{Binding ActualHeight, ElementName=AboutOverlay}"/>
+        </controls:Overlay>
+        <controls:Overlay x:Name="RestartNotification" Background="Transparent" IsAvailable="{Binding IsRestartNotificationAvailable,Mode=OneWay}" Visibility="Collapsed">
+            <controls:RestartNotification Height="{Binding ActualHeight, ElementName=RestartNotification, Mode=OneTime}"/>
+        </controls:Overlay>
+        <controls:Overlay x:Name="Help" IsAvailable="{Binding IsHelpAvailable,Mode=OneWay}" Visibility="Collapsed" Background="{StaticResource BackgroundColor}">
+            <controls:Help Height="{Binding ActualHeight, ElementName=Help, Mode=OneTime}"/>
+        </controls:Overlay>
+        <controls:Overlay x:Name="Donate" IsAvailable="{Binding IsDonateAvailable,Mode=OneWay}" Visibility="Collapsed" Background="{StaticResource BackgroundColor}">
+            <controls:DonateMenu Height="{Binding ActualHeight, ElementName=Donate, Mode=OneTime}"/>
+        </controls:Overlay>
+    </Grid>
+</Page>

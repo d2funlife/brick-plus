@@ -1,0 +1,34 @@
+<Application x:Class="Tetris.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" xmlns:local="using:Tetris" xmlns:vm="using:Tetris.ViewModel" xmlns:converters="using:Tetris.Converters">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/DarkLightTheme.xaml"/>
+                <ResourceDictionary Source="Styles/GameScene.xaml"/>
+                <ResourceDictionary Source="Styles/MainMenu.xaml"/>
+                <ResourceDictionary Source="Styles/GameResultMenu.xaml"/>
+                <ResourceDictionary Source="Styles/ModeMenu.xaml"/>
+                <ResourceDictionary Source="Styles/SettingsListView.xaml"/>
+                <ResourceDictionary Source="Styles/NicknameInput.xaml"/>
+                <ResourceDictionary Source="Styles/Overlay.xaml"/>
+                <ResourceDictionary Source="Styles/RecordsMenu.xaml"/>
+                <ResourceDictionary Source="Styles/SettingsMenu.xaml"/>
+                <ResourceDictionary Source="Styles/AboutMenu.xaml"/>
+                <ResourceDictionary Source="Styles/HelpMenu.xaml"/>
+                <ResourceDictionary Source="Styles/DonateMenu.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <converters:BooleanToVisibility x:Key="BooleanToVisibility" />
+            <converters:BooleanToBrush x:Key="BooleanToBrush" />
+            <converters:CountToVisibility x:Key="CountToVisibility" />
+            <converters:BooleanToHorizontalAighment x:Key="BooleanToHorizontalAighment" />
+            <converters:RecordsModeToVisibility x:Key="RecordsModeToVisibility" />
+            <converters:RecordsTypeToOpacity x:Key="RecordsTypeToOpacity" />
+            <converters:ControlTypeToVisibility x:Key="ControlTypeToVisibility" />
+            <converters:IntToVisibility x:Key="IntToVisibility" />
+            <converters:BooleanParamToVisibility x:Key="BooleanParamToVisibility" />
+            <converters:ControlPositionToVisibility x:Key="ControlPositionToVisibility" />
+            <converters:ControlMarginToVisibility x:Key="ControlMarginToVisibility" />
+            <converters:ThemeSchemeToVisibility x:Key="ThemeSchemeToVisibility" />
+            <converters:GameResultToVisibility x:Key="GameResultToVisibility" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,177 @@
+﻿<UserControl
+    x:Class="Tetris.Controls.RecordsMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tetris.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:viewModel="using:Tetris.ViewModel"
+    xmlns:vm="using:Tetris.DesignData"
+    xmlns:svg="using:Tetris.Controls.SVG"
+    mc:Ignorable="d"
+    d:DesignHeight="800"
+    d:DesignWidth="480"
+    d:DataContext="{d:DesignInstance Type=vm:Records,IsDesignTimeCreatable=True}">
+    <Grid x:Name="RecordsMenuRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8.7*"/>
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height=".5*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="MenuHeader" Grid.Row="0" Background="{ThemeResource SystemColorControlAccentBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Background="Transparent">
+                <TextBlock x:Uid="Local" Text="Local" Style="{StaticResource RecordsHeaderLable}" Opacity="{Binding RecordsType, Converter={StaticResource RecordsTypeToOpacity},FallbackValue=Hidden, ConverterParameter=Local, Mode=OneWay}"/>
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="PointerPressed">
+                        <core:InvokeCommandAction Command="{Binding SwitchRecordsTypeCommand, Mode=OneTime}" />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Grid>
+            <Grid Grid.Column="1" Background="Transparent">
+                <StackPanel Orientation="Horizontal">
+                    <svg:BannedGlobal Width="30" Margin="0,0,7,0" Opacity=".5"/>
+                    <TextBlock x:Uid="Global" Text="Global" Style="{StaticResource RecordsHeaderLable}" Opacity=".5"/>
+                    <!--<TextBlock Text="Глобальные" Style="{StaticResource RecordsHeaderLable}" Opacity="{Binding RecordsType, Converter={StaticResource RecordsTypeToOpacity},FallbackValue=Hidden, ConverterParameter=Global, Mode=OneWay}"/>-->
+                </StackPanel>
+                <!--<interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="PointerPressed">
+                        <core:InvokeCommandAction Command="{Binding SwitchRecordsTypeCommand, Mode=OneTime}" />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>-->
+            </Grid>
+        </Grid>
+        <Grid x:Name="RecordsGameMode" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Background="Transparent">
+                <svg:MenuLeftArrow  Margin="15" />
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="PointerPressed">
+                        <core:InvokeCommandAction Command="{Binding SwitchRecordsLeftCommand, Mode=OneTime}" />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Grid>
+            <TextBlock x:Uid="Classic" Grid.Column="1" Text="Classic" Style="{StaticResource RecordsGameModeLable}" Visibility="{Binding RecordsMode, Converter={StaticResource RecordsModeToVisibility},FallbackValue=Hidden, ConverterParameter=Classic, Mode=OneWay}" Foreground="{StaticResource ForegroundColor}"/>
+            <TextBlock x:Uid="TimeAttack" Grid.Column="1" Text="Time attack" Style="{StaticResource RecordsGameModeLable}" Visibility="{Binding RecordsMode, Converter={StaticResource RecordsModeToVisibility},FallbackValue=Hidden, ConverterParameter=TwoMinutes, Mode=OneWay}" Foreground="{StaticResource ForegroundColor}"/>
+            <TextBlock x:Uid="Infinity" Grid.Column="1" Text="Infinity" Style="{StaticResource RecordsGameModeLable}" Visibility="{Binding RecordsMode, Converter={StaticResource RecordsModeToVisibility},FallbackValue=Hidden, ConverterParameter=Infinity, Mode=OneWay}" Foreground="{StaticResource ForegroundColor}"/>
+            <Grid Grid.Column="2" Background="Transparent">
+                <svg:MenuRightArrow Margin="15"/>
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="PointerPressed">
+                        <core:InvokeCommandAction Command="{Binding SwitchRecordsRightCommand, Mode=OneTime}" />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Grid>
+        </Grid>
+        <Grid x:Name="RecordsTable" Grid.Row="2" Background="Transparent">
+            <ListView Style="{StaticResource RecordsTable}" ItemsSource="{Binding GameResults}" 
+                  Visibility="{Binding GameResults.Count, Converter={StaticResource CountToVisibility}, Mode=OneWay}" Margin="5,0,5,0">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                        <Setter Property="Margin" Value="0,2,0,0"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="2"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2"/>
+                                <ColumnDefinition Width="90"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" Background="{StaticResource AccentDarkColor}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" Background="{ThemeResource SystemColorControlAccentBrush}" Visibility="{Binding IsLastResult, Converter={StaticResource BooleanToVisibility}, Mode=OneWay}"/>
+                                <TextBlock Grid.Column="1" Text="{Binding Number}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+                            </Grid>
+                            <Grid Grid.Column="2" Background="{StaticResource AccentDarkColor}">
+                                <TextBlock Text="{Binding PlayerName}"  HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="24"/>
+                            </Grid>
+                            <Grid Grid.Column="4" Background="{StaticResource AccentDarkColor}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding Score}"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid x:Name="RecordsButtons" Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <!--<ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="3*" />-->
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="7*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Background="Transparent">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="PointerEntered">
+                        <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}" />
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerExited">
+                        <core:ChangePropertyAction PropertyName="Background">
+                            <core:ChangePropertyAction.Value>
+                                <SolidColorBrush Color="Transparent" />
+                            </core:ChangePropertyAction.Value>
+                        </core:ChangePropertyAction>
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerPressed">
+                        <core:InvokeCommandAction Command="{Binding HideRecordsCommand, Mode=OneTime}" />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+                <Border Style="{StaticResource ButtonBorder}" />
+                <svg:Home Margin="8"/>
+            </Grid>
+            <Grid Grid.Column="3" Background="Transparent">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="PointerEntered">
+                        <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}" />
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerExited">
+                        <core:ChangePropertyAction PropertyName="Background">
+                            <core:ChangePropertyAction.Value>
+                                <SolidColorBrush Color="Transparent" />
+                            </core:ChangePropertyAction.Value>
+                        </core:ChangePropertyAction>
+                    </core:EventTriggerBehavior>
+                    <core:EventTriggerBehavior EventName="PointerPressed">
+                        <core:InvokeCommandAction Command="{Binding HideRecordsCommand, Mode=OneTime}" />
+                        <core:InvokeCommandAction Command="{Binding ResumeOrRestartGameCommand, Mode=OneTime}" />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+                <Border BorderBrush="{ThemeResource PhoneAccentBrush}" BorderThickness="2" />
+                <svg:Play Margin="8"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

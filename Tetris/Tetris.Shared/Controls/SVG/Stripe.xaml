@@ -1,0 +1,23 @@
+﻿<UserControl
+    x:Class="Tetris.Controls.SVG.Stripe"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tetris.Controls.SVG"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    <Viewbox Stretch="Fill">
+        <Canvas Width="480" Height="4.9">
+            <Canvas.RenderTransform>
+                <TranslateTransform X="0" Y="0"/>
+            </Canvas.RenderTransform>
+            <Canvas>
+                <Rectangle Canvas.Top="0" Width="6" Height="5" Fill="#ffffff"/>
+                <Path Fill="#ffffff" Data="M462 5h-12V0h12V5z M438 5h-12V0h12V5z M414 5h-12V0h12V5z M390 5h-12V0h12V5z M366 5h-12V0h12   V5z M342 5h-12V0h12V5z M318 5h-12V0h12V5z M294 5h-12V0h12V5z M270 5h-12V0h12V5z M246 5h-12V0h12V5z M222 5h-12V0h12V5z M198 5   h-12V0h12V5z M174 5h-12V0h12V5z M150 5h-12V0h12V5z M126 5h-12V0h12V5z M102 5H90V0h12V5z M78 5H66V0h12V5z M54 5H42V0h12V5z    M30 5H18V0h12V5z"/>
+                <Rectangle Canvas.Left="474" Canvas.Top="0" Width="6" Height="5"  Fill="#ffffff"/>
+            </Canvas>
+        </Canvas>
+    </Viewbox>
+</UserControl>

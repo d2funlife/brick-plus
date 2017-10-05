@@ -1,0 +1,29 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tetris"
+    xmlns:controls="using:Tetris.Controls">
+    <Style TargetType="controls:Overlay">
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:Overlay">
+                    <Grid Background="{TemplateBinding Background}" Name="LayoutGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.Resources>
+                            <Storyboard x:Key="FadeOut" x:Name="FadeOutStoryboard">
+                                <DoubleAnimation Duration="0:0:0.3" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LayoutGrid" />
+                            </Storyboard>
+                            <Storyboard x:Key="FadeIn" x:Name="FadeInStoryboard">
+                                <DoubleAnimation Duration="0:0:0.3" From="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LayoutGrid" />
+                            </Storyboard>
+                        </Grid.Resources>
+                        <Rectangle Fill="Transparent" />
+                        <Grid>
+                            <ContentControl Content="{TemplateBinding Content}" HorizontalContentAlignment="Stretch" />
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,95 @@
+﻿<UserControl
+    x:Class="Tetris.Controls.RateAppNotification"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tetris.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    mc:Ignorable="d"
+    d:DesignHeight="800"
+    d:DesignWidth="480">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="31*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="6*" />
+        </Grid.RowDefinitions>
+        <TextBlock x:Uid="PleaseRate"
+                           Grid.Column="1"
+                           VerticalAlignment="Center"
+                           FontSize="35"
+                           Foreground="{StaticResource ForegroundColor}"
+                           Text="Do you like game? Want it to become even better? Please, support us with your rate"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap" />
+        <Grid Grid.Row="1"
+                      Grid.Column="1"
+                      Background="Transparent">
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="PointerPressed">
+                    <core:InvokeCommandAction Command="{Binding SwitchDonateAvailableCommand, Mode=OneTime}" />
+                </core:EventTriggerBehavior>
+                <core:EventTriggerBehavior EventName="PointerEntered">
+                    <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}" />
+                </core:EventTriggerBehavior>
+                <core:EventTriggerBehavior EventName="PointerExited">
+                    <core:ChangePropertyAction PropertyName="Background" />
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+            <Border Style="{StaticResource ButtonBorder}" />
+            <TextBlock x:Uid="Donate" Style="{StaticResource MenuLable}" Text="DONATE" />
+        </Grid>
+        <Grid Grid.Row="3"
+                      Grid.Column="1"
+                      Background="Transparent">
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="PointerPressed">
+                    <core:InvokeCommandAction Command="{Binding RateAppCommand, Mode=OneTime}" />
+                </core:EventTriggerBehavior>
+                <core:EventTriggerBehavior EventName="PointerEntered">
+                    <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}" />
+                </core:EventTriggerBehavior>
+                <core:EventTriggerBehavior EventName="PointerExited">
+                    <core:ChangePropertyAction PropertyName="Background" />
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+            <Border Style="{StaticResource ButtonBorder}" />
+            <TextBlock x:Uid="Rate" Style="{StaticResource MenuLable}" Text="RATE" />
+        </Grid>
+        <Grid Grid.Row="5" Grid.Column="1" Background="Transparent">
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="PointerPressed">
+                    <core:InvokeCommandAction Command="{Binding DisableRateNotificationCommand, Mode=OneTime}" />
+                </core:EventTriggerBehavior>
+                <core:EventTriggerBehavior EventName="PointerEntered">
+                    <core:ChangePropertyAction PropertyName="Background" Value="{ThemeResource SystemColorControlAccentBrush}" />
+                </core:EventTriggerBehavior>
+                <core:EventTriggerBehavior EventName="PointerExited">
+                    <core:ChangePropertyAction PropertyName="Background" />
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+            <Border Style="{StaticResource ButtonBorder}" />
+            <TextBlock x:Uid="NoThx" Style="{StaticResource MenuLable}" Text="NO, THANKS " />
+        </Grid>
+        <Grid Grid.Row="6" Grid.Column="1">
+            <TextBlock x:Uid="DontPrompt" Text="Don't prompt me again" Foreground="{StaticResource ForegroundColor}" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,15" Visibility="{Binding IsShutDownRateAppAvailable, Converter={StaticResource BooleanParamToVisibility},FallbackValue=Hidden, Mode=OneWay}">
+                <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="PointerPressed">
+                    <core:InvokeCommandAction Command="{Binding ShutdownRateAppCommand, Mode=OneTime}" />
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+            </TextBlock>
+        </Grid>
+    </Grid>
+</UserControl>

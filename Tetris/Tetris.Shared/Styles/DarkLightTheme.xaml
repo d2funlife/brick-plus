@@ -1,0 +1,35 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tetris">
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Dark">
+            <SolidColorBrush x:Key="BackgroundColor" Color="#2B2B2B"/>
+            <SolidColorBrush x:Key="ForegroundColor" Color="White"/>
+            <SolidColorBrush x:Key="ForegroundInvertColor" Color="#252121"/>
+            <SolidColorBrush x:Key="BlockBackground" Color="#494949"/>
+            <SolidColorBrush x:Key="BlockBorder" Color="#2B2B2B"/>
+            <SolidColorBrush x:Key="AccentDarkColor" Color="#161616"/>
+            <Style x:Key="SeparateLines" TargetType="Grid">
+                <Setter Property="Background" Value="#EBEAEA"/>
+            </Style>
+            <SolidColorBrush x:Key="GroupLogoColor" Color="#888887"/>
+            <SolidColorBrush x:Key="AboutLinkColor" Color="#888887"/>
+            <SolidColorBrush x:Key="AboutNameColor" Color="#ebeaea"/>
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Default">
+            <SolidColorBrush x:Key="BackgroundColor" Color="#FFEBEAEA"/>
+            <SolidColorBrush x:Key="ForegroundColor" Color="Black"/>
+            <SolidColorBrush x:Key="ForegroundInvertColor" Color="White"/>
+            <SolidColorBrush x:Key="BlockBackground" Color="#ffffff"/>
+            <SolidColorBrush x:Key="BlockBorder" Color="#e9eaec"/>
+            <SolidColorBrush x:Key="AccentDarkColor" Color="#afafaf"/>
+            <Style x:Key="SeparateLines" TargetType="Grid">
+                <Setter Property="Background" Value="Black"/>
+            </Style>
+            <SolidColorBrush x:Key="GroupLogoColor" Color="#595958"/>
+            <SolidColorBrush x:Key="AboutLinkColor" Color="#595959"/>
+            <SolidColorBrush x:Key="AboutNameColor" Color="#2b2b2b"/>
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+</ResourceDictionary>
